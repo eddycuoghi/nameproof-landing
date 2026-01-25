@@ -84,7 +84,8 @@
     .submit-btn:disabled { opacity: 0.7; cursor: not-allowed; }
 
     .form-success {
-      display: none; background: #dcfce7; color: #166534; padding: 16px;
+      display: none;
+      background: #dcfce7; color: #166534; padding: 16px;
       border-radius: 8px; margin-top: 16px; text-align: center; font-weight: 600;
     }
 
@@ -126,6 +127,7 @@
     }
   </style>
 </head>
+
 <body>
   <section class="hero">
     <div class="container">
@@ -186,6 +188,7 @@
     <div class="container">
       <h2>Join the private beta</h2>
       <p>Get your validation report delivered by email</p>
+
       <div class="form-container">
         <form id="betaForm" onsubmit="handleSubmit(event)">
           <div class="form-group">
@@ -200,9 +203,11 @@
             <label for="brandName">Brand Name (optional)</label>
             <input type="text" id="brandName" name="brandName" placeholder="Your brand name" />
           </div>
+
           <button type="submit" class="submit-btn" id="submitBtn">Get Early Access</button>
-          <div class="form-success" id="successMessage">&#10003; Thanks! Check your email for confirmation.</div>
         </form>
+
+        <div class="form-success" id="successMessage">&#10003; Thanks! Check your email for confirmation.</div>
       </div>
     </div>
   </section>
@@ -271,6 +276,8 @@
       btn.disabled = true;
       btn.textContent = "Sending...";
 
+      let sentOk = false;
+
       try {
         const payload = {
           name,
@@ -289,20 +296,23 @@
 
         if (!res.ok) throw new Error("Webhook error: " + res.status);
 
+        // ✅ SUCCESS: hide form forever, show thanks forever
+        sentOk = true;
         form.style.display = "none";
         successMessage.style.display = "block";
 
-        setTimeout(() => {
-          form.reset();
-          form.style.display = "block";
-          successMessage.style.display = "none";
-        }, 3000);
+        // opzionale: porta a vista il messaggio su mobile
+        successMessage.scrollIntoView({ behavior: "smooth", block: "center" });
+
       } catch (err) {
         console.error(err);
         alert("Error sending data. Please try again.");
       } finally {
-        btn.disabled = false;
-        btn.textContent = oldText;
+        // ✅ se NON è andato a buon fine, ripristina bottone
+        if (!sentOk) {
+          btn.disabled = false;
+          btn.textContent = oldText;
+        }
       }
     }
   </script>
