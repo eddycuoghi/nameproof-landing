@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NameProof - Brand Naming Validated</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6; color: #1a1a1a; background: #ffffff;
+    }
+    .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+    .header { display: none; }
+
+    .hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: white; padding: 80px 20px; text-align: center; margin-bottom: 60px;
+    }
+    .hero h1 { font-size: 64px; font-weight: 700; margin-bottom: 20px; line-height: 1.2; }
+    .hero p {
+      font-size: 18px; margin-bottom: 30px; opacity: 0.9;
+      max-width: 600px; margin-left: auto; margin-right: auto;
+    }
+    .hero-cta {
+      display: inline-block; background: #3b82f6; color: white;
+      padding: 14px 32px; border-radius: 8px; text-decoration: none;
+      font-weight: 600; font-size: 16px; transition: background 0.3s ease;
+      border: none; cursor: pointer;
+    }
+    .hero-cta:hover { background: #2563eb; }
+    .hero-subtext { font-size: 14px; margin-top: 15px; opacity: 0.8; }
+
+    .section { margin-bottom: 80px; }
+    .section-title {
+      font-size: 32px; font-weight: 700; margin-bottom: 40px;
+      text-align: center; color: #0f172a;
+    }
+
+    .problems { background: #f8fafc; padding: 40px; border-radius: 12px; margin-bottom: 60px; }
+    .problem-item { display: flex; align-items: flex-start; margin-bottom: 24px; font-size: 16px; }
+    .problem-item:last-child { margin-bottom: 0; }
+    .problem-icon { font-size: 24px; margin-right: 16px; flex-shrink: 0; margin-top: 2px; }
+    .problem-text { color: #334155; }
+
+    .solution-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px; margin-bottom: 60px;
+    }
+    .solution-card {
+      background: white; border: 1px solid #e2e8f0; padding: 32px;
+      border-radius: 12px; text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .solution-card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    .solution-icon { font-size: 40px; margin-bottom: 16px; }
+    .solution-card h3 { font-size: 18px; font-weight: 600; margin-bottom: 12px; color: #0f172a; }
+    .solution-card p { font-size: 14px; color: #64748b; line-height: 1.6; }
+
+    .form-section {
+      background: linear-gradient(135deg, #f0f9ff 0%, #f8fafc 100%);
+      padding: 60px 40px; border-radius: 12px; margin-bottom: 60px; text-align: center;
+    }
+    .form-section h2 { font-size: 28px; font-weight: 700; margin-bottom: 12px; color: #0f172a; }
+    .form-section > p { color: #64748b; margin-bottom: 32px; font-size: 16px; line-height: 1.5; }
+
+    .form-container { max-width: 500px; margin: 0 auto; text-align: left; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 8px; color: #0f172a; }
+    .form-group input {
+      width: 100%; padding: 12px 16px; border: 1px solid #cbd5e1; border-radius: 8px;
+      font-size: 16px; font-family: inherit; transition: border-color 0.3s ease;
+    }
+    .form-group input:focus { outline: none; border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(59,130,246,0.1); }
+    .form-group input::placeholder { color: #94a3b8; }
+
+    .submit-btn {
+      width: 100%; padding: 14px 24px; background: #3b82f6; color: white;
+      border: none; border-radius: 8px; font-size: 16px; font-weight: 600;
+      cursor: pointer; transition: background 0.3s ease; margin-top: 8px;
+    }
+    .submit-btn:hover { background: #2563eb; }
+    .submit-btn:active { transform: scale(0.98); }
+    .submit-btn:disabled { opacity: 0.7; cursor: not-allowed; }
+
+    .form-success {
+      display: none; background: #dcfce7; color: #166534; padding: 16px;
+      border-radius: 8px; margin-top: 16px; text-align: center; font-weight: 600;
+    }
+
+    .example-report {
+      background: white; border: 2px solid #e2e8f0; border-radius: 12px;
+      padding: 40px; margin-bottom: 60px; text-align: center;
+    }
+    .example-report h3 { font-size: 24px; font-weight: 700; margin-bottom: 24px; color: #0f172a; }
+    .report-preview { background: #f8fafc; border-radius: 8px; padding: 32px; margin-bottom: 24px; text-align: left; }
+    .report-item { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e2e8f0; }
+    .report-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .report-label {
+      font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase;
+      letter-spacing: 0.5px; margin-bottom: 8px;
+    }
+    .report-value { font-size: 16px; color: #0f172a; font-weight: 600; }
+    .report-note { font-size: 14px; color: #64748b; margin-top: 8px; }
+    .example-report p { color: #64748b; font-size: 14px; }
+
+    footer {
+      background: #0f172a; color: white; padding: 40px 20px; text-align: center;
+      border-top: 1px solid #1e293b;
+    }
+    .footer-content { max-width: 900px; margin: 0 auto; }
+    .footer-copyright { font-size: 14px; margin-bottom: 20px; opacity: 0.8; }
+    .footer-disclaimer { font-size: 12px; color: #cbd5e1; line-height: 1.6; margin-bottom: 20px; }
+    .footer-links { font-size: 12px; color: #cbd5e1; }
+    .footer-links a { color: #3b82f6; text-decoration: none; margin: 0 8px; }
+    .footer-links a:hover { text-decoration: underline; }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 32px; }
+      .hero p { font-size: 16px; }
+      .section-title { font-size: 24px; }
+      .solution-grid { grid-template-columns: 1fr; }
+      .problems { padding: 24px; }
+      .form-section { padding: 40px 24px; }
+      .example-report { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="container">
+      <div style="width:150px;height:150px;background:#fff;margin:0 auto 30px;display:flex;align-items:center;justify-content:center;border-radius:12px;">
+        <img src="./nameproof-logo-black-red.png" alt="NameProof Logo" style="width:110px;height:110px;object-fit:contain;">
+      </div>
+
+      <h1>NameProof</h1>
+      <p>Generate brand names that work worldwide</p>
+      <p style="font-size:16px;margin-bottom:20px;">AI-powered naming with global validation in 60 seconds</p>
+      <button class="hero-cta" onclick="document.querySelector('.form-section').scrollIntoView({behavior:'smooth'})">
+        Try Free (5 names)
+      </button>
+      <p class="hero-subtext">Private beta &mdash; invites sent weekly. No spam</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Naming mistakes are expensive</h2>
+      <div class="problems">
+        <div class="problem-item"><div class="problem-icon">&#10060;</div><div class="problem-text">Sounds great in English, awkward in other languages</div></div>
+        <div class="problem-item"><div class="problem-icon">&#10060;</div><div class="problem-text">Domain or social handles already taken</div></div>
+        <div class="problem-item"><div class="problem-icon">&#10060;</div><div class="problem-text">Trademark risk discovered too late</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">What you'll get</h2>
+      <div class="solution-grid">
+        <div class="solution-card">
+          <div class="solution-icon">&#127757;</div>
+          <h3>Global Pronunciation</h3>
+          <p>Check how your name sounds in 8 languages with cultural fit notes</p>
+        </div>
+        <div class="solution-card">
+          <div class="solution-icon">&#128279;</div>
+          <h3>Domain &amp; Social Check</h3>
+          <p>Real-time availability for .com, .ai, .io and all major social handles</p>
+        </div>
+        <div class="solution-card">
+          <div class="solution-icon">&#9888;&#65039;</div>
+          <h3>Risk Flags</h3>
+          <p>Trademark hints and brand confusion alerts before you invest</p>
+        </div>
+        <div class="solution-card">
+          <div class="solution-icon">&#10024;</div>
+          <h3>AI Alternatives</h3>
+          <p>Get stronger alternatives if your top choice has issues</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="form-section">
+    <div class="container">
+      <h2>Join the private beta</h2>
+      <p>Get your validation report delivered by email</p>
+      <div class="form-container">
+        <form id="betaForm" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="John Doe" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="brandName">Brand Name (optional)</label>
+            <input type="text" id="brandName" name="brandName" placeholder="Your brand name" />
+          </div>
+          <button type="submit" class="submit-btn" id="submitBtn">Get Early Access</button>
+          <div class="form-success" id="successMessage">&#10003; Thanks! Check your email for confirmation.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="example-report">
+        <h3>Example Report Preview</h3>
+        <div class="report-preview">
+          <div class="report-item"><div class="report-label">Brand Name</div><div class="report-value">Zenith</div></div>
+          <div class="report-item">
+            <div class="report-label">Global Sound Score</div>
+            <div class="report-value">8.5/10</div>
+            <div class="report-note">Sounds professional in English, Spanish, French, German, Italian, Portuguese, Japanese, and Mandarin</div>
+          </div>
+          <div class="report-item">
+            <div class="report-label">Domain Availability</div>
+            <div class="report-value">&#10003; zenith.com (available) &bull; &#10003; zenith.ai (available) &bull; &#10007; zenith.io (taken)</div>
+          </div>
+          <div class="report-item">
+            <div class="report-label">Social Handles</div>
+            <div class="report-value">&#10003; @zenith (Instagram available) &bull; &#10003; @zenith (TikTok available) &bull; &#10007; @zenith (Twitter taken)</div>
+          </div>
+          <div class="report-item">
+            <div class="report-label">Trademark Risk</div>
+            <div class="report-value">&#128993; Medium Risk</div>
+            <div class="report-note">Similar marks exist in tech sector. Recommend legal review before launch.</div>
+          </div>
+          <div class="report-item">
+            <div class="report-label">Alternatives</div>
+            <div class="report-value">Apex (9.2/10) &bull; Vertex (8.8/10) &bull; Nexus (8.6/10)</div>
+          </div>
+        </div>
+        <p>Your real report will be personalized based on your brand and industry</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-copyright">&copy; 2026 NameProof. All rights reserved.</div>
+      <div class="footer-disclaimer">
+        NameProof is currently in private beta. The analysis and reports provided are for informational and creative purposes only and do not constitute legal advice or a formal trademark guarantee. While we help identify potential risks, we recommend consulting a legal professional for final trademark registrations.
+      </div>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a> &bull; <a href="#">Terms of Service</a> &bull; <a href="#">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const MAKE_WEBHOOK_URL = "https://hook.eu1.make.com/gaa9lgj9ms6mz7q64rt69o3156kdm8wh";
+
+    async function handleSubmit(event) {
+      event.preventDefault();
+
+      const form = document.getElementById("betaForm");
+      const successMessage = document.getElementById("successMessage");
+      const btn = document.getElementById("submitBtn");
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const brandName = document.getElementById("brandName").value.trim();
+
+      const oldText = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = "Sending...";
+
+      try {
+        const payload = {
+          name,
+          email,
+          brandName,
+          source: "nameproof-landing",
+          page: window.location.href,
+          timestamp: new Date().toISOString()
+        };
+
+        const res = await fetch(MAKE_WEBHOOK_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+
+        if (!res.ok) throw new Error("Webhook error: " + res.status);
+
+        form.style.display = "none";
+        successMessage.style.display = "block";
+
+        setTimeout(() => {
+          form.reset();
+          form.style.display = "block";
+          successMessage.style.display = "none";
+        }, 3000);
+      } catch (err) {
+        console.error(err);
+        alert("Error sending data. Please try again.");
+      } finally {
+        btn.disabled = false;
+        btn.textContent = oldText;
+      }
+    }
+  </script>
+</body>
+</html>
