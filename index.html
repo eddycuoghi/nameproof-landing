@@ -3,15 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NameProof - Brand Naming Validated</title>
+  
+  <!-- SEO Meta Tags -->
+  <title>NameProof - AI Brand Name Generator & Validator | 30+ Names in 24h</title>
+  <meta name="description" content="Get 30 AI-powered brand names validated globally. Check pronunciation, domains, social handles & trademark risks. Delivered in 24 hours. Beta €9." />
+  <meta name="keywords" content="brand name generator, business name ideas, validate brand name, check domain availability, trademark search, brand naming tool" />
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://nameproof.io/" />
+  <meta property="og:title" content="NameProof - AI Brand Name Generator & Validator" />
+  <meta property="og:description" content="Get 30 AI-powered brand names validated globally in 24 hours. Beta €9." />
+  <meta property="og:image" content="https://nameproof.io/nameproof-logo-black-red.png" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://nameproof.io/" />
+  <meta name="twitter:title" content="NameProof - AI Brand Name Generator" />
+  <meta name="twitter:description" content="Get 30 validated brand names in 24h. Check domains, pronunciation & trademarks." />
+  <meta name="twitter:image" content="https://nameproof.io/nameproof-logo-black-red.png" />
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://nameproof.io/" />
+  
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
       line-height: 1.6; color: #1a1a1a; background: #ffffff;
     }
     .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
-    .header { display: none; }
 
     .hero {
       background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
@@ -23,13 +45,39 @@
       max-width: 600px; margin-left: auto; margin-right: auto;
     }
     .hero-cta {
-      display: inline-block; background: #3b82f6; color: white;
-      padding: 14px 32px; border-radius: 8px; text-decoration: none;
-      font-weight: 600; font-size: 16px; transition: background 0.3s ease;
-      border: none; cursor: pointer;
+      padding: 16px 32px;
+      background: linear-gradient(135deg, #007AFF, #5856D6);
+      color: white; border: none; border-radius: 999px;
+      font-size: 16px; font-weight: 700; cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+      box-shadow: 0 10px 30px rgba(0,122,255,0.25);
+      text-decoration: none; display: inline-flex;
+      align-items: center; justify-content: center;
     }
-    .hero-cta:hover { background: #2563eb; }
+    .hero-cta:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.03);
+      box-shadow: 0 14px 36px rgba(88,86,214,0.28);
+    }
+    .hero-cta.secondary {
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.35);
+      box-shadow: none;
+    }
+    .hero-cta.secondary:hover {
+      transform: translateY(-1px);
+      background: rgba(255,255,255,0.14);
+      filter: none;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.20);
+    }
     .hero-subtext { font-size: 14px; margin-top: 15px; opacity: 0.8; }
+
+    /* URGENCY BANNER */
+    .urgency-banner {
+      background: #fef3c7; color: #92400e; padding: 12px 20px; text-align: center;
+      font-weight: 600; font-size: 14px; border-bottom: 2px solid #fbbf24;
+    }
+    .urgency-banner strong { color: #b45309; }
 
     .section { margin-bottom: 80px; }
     .section-title {
@@ -38,10 +86,81 @@
     }
 
     .problems { background: #f8fafc; padding: 40px; border-radius: 12px; margin-bottom: 60px; }
-    .problem-item { display: flex; align-items: flex-start; margin-bottom: 24px; font-size: 16px; }
+    .problem-item { display: flex; align-items: center; margin-bottom: 24px; font-size: 16px; }
     .problem-item:last-child { margin-bottom: 0; }
-    .problem-icon { font-size: 24px; margin-right: 16px; flex-shrink: 0; margin-top: 2px; }
+    .problem-icon { font-size: 24px; margin-right: 16px; flex-shrink: 0; }
     .problem-text { color: #334155; }
+
+    /* PRICING SECTION */
+    .pricing-section {
+      background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 100%);
+      padding: 60px 40px; border-radius: 12px; margin-bottom: 60px;
+    }
+    .pricing-section h2 { 
+      font-size: 36px; font-weight: 700; margin-bottom: 16px; 
+      text-align: center; color: #0f172a; 
+    }
+    .pricing-subtitle {
+      text-align: center; color: #64748b; font-size: 18px; margin-bottom: 40px;
+    }
+    .pricing-card {
+      background: white; border: 3px solid #3b82f6; border-radius: 12px;
+      padding: 40px; max-width: 500px; margin: 0 auto; position: relative;
+      box-shadow: 0 10px 30px rgba(59,130,246,0.15);
+    }
+    .pricing-badge {
+      position: absolute; top: -15px; right: 20px;
+      background: #ef4444; color: white; padding: 6px 16px;
+      border-radius: 20px; font-size: 12px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.5px;
+    
+      z-index: 2;
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .pricing-header { text-align: center; margin-bottom: 30px; }
+    .pricing-header h3 { font-size: 24px; font-weight: 700; color: #0f172a; margin-bottom: 16px; }
+    .price-container { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 8px; }
+    .original-price { 
+      font-size: 24px; color: #94a3b8; text-decoration: line-through; font-weight: 600;
+    }
+    .current-price { font-size: 48px; font-weight: 700; color: #3b82f6; }
+    .price-note { font-size: 14px; color: #64748b; }
+    
+    .features-list { list-style: none; margin: 30px 0; }
+    .features-list li {
+      padding: 12px 0; border-bottom: 1px solid #e2e8f0;
+      font-size: 16px; display: flex; align-items: center;
+    }
+    .features-list li:last-child { border-bottom: none; }
+    .features-list li::before {
+      content: "✓"; color: #10b981; font-weight: 700;
+      font-size: 20px; margin-right: 12px;
+    }
+    
+    .cta-button {
+      width: 100%; padding: 18px 24px;
+      background: linear-gradient(135deg, #007AFF, #5856D6);
+      color: white; border: none; border-radius: 14px;
+      font-size: 18px; font-weight: 700; cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+      margin-top: 24px; box-shadow: 0 12px 28px rgba(0,122,255,0.20);
+      text-decoration: none; display: block; text-align: center;
+    }
+    .cta-button:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.03);
+      box-shadow: 0 16px 34px rgba(88,86,214,0.22);
+    }
+    
+    .spots-left {
+      text-align: center; margin-top: 16px; font-size: 14px;
+      color: #dc2626; font-weight: 600;
+    }
+    .guarantee {
+      text-align: center; margin-top: 20px; padding-top: 20px;
+      border-top: 1px solid #e2e8f0; font-size: 14px; color: #64748b;
+    }
 
     .solution-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -50,9 +169,12 @@
     .solution-card {
       background: white; border: 1px solid #e2e8f0; padding: 32px;
       border-radius: 12px; text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;
     }
     .solution-card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    @media (hover: none) {
+      .solution-card:active { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(0,0,0,0.10); }
+    }
     .solution-icon { font-size: 40px; margin-bottom: 16px; }
     .solution-card h3 { font-size: 18px; font-weight: 600; margin-bottom: 12px; color: #0f172a; }
     .solution-card p { font-size: 14px; color: #64748b; line-height: 1.6; }
@@ -65,46 +187,129 @@
     .form-section > p { color: #64748b; margin-bottom: 32px; font-size: 16px; line-height: 1.5; }
 
     .form-container { max-width: 500px; margin: 0 auto; text-align: left; }
+    .radio-group { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px; }
+    .radio {
+      display: flex; align-items: center; gap: 8px; font-size: 14px; color: #0f172a;
+      background: #f1f5f9; border: 1px solid #e2e8f0; padding: 10px 12px; border-radius: 12px;
+    }
+    .radio input { accent-color: #007AFF; }
+    .helper { margin-top: 8px; font-size: 13px; color: #64748b; }
+    
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+    
     .form-group { margin-bottom: 16px; }
     .form-group label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 8px; color: #0f172a; }
-    .form-group input {
+    .form-group input, .form-group select, .form-group textarea {
       width: 100%; padding: 12px 16px; border: 1px solid #cbd5e1; border-radius: 8px;
       font-size: 16px; font-family: inherit; transition: border-color 0.3s ease;
+      background: white;
     }
-    .form-group input:focus { outline: none; border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(59,130,246,0.1); }
-    .form-group input::placeholder { color: #94a3b8; }
+    .form-group textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { 
+      outline: none; border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(59,130,246,0.1); 
+    }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: #94a3b8; }
 
     .submit-btn {
-      width: 100%; padding: 14px 24px; background: #3b82f6; color: white;
-      border: none; border-radius: 8px; font-size: 16px; font-weight: 600;
-      cursor: pointer; transition: background 0.3s ease; margin-top: 8px;
+      width: 100%; padding: 16px;
+      background: linear-gradient(135deg, #007AFF, #5856D6);
+      color: white; border: none; border-radius: 12px;
+      font-size: 16px; font-weight: 700; cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+      box-shadow: 0 10px 24px rgba(0,122,255,0.18);
     }
-    .submit-btn:hover { background: #2563eb; }
-    .submit-btn:active { transform: scale(0.98); }
+    .submit-btn:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.03);
+      box-shadow: 0 14px 30px rgba(88,86,214,0.20);
+    }
     .submit-btn:disabled { opacity: 0.7; cursor: not-allowed; }
 
-    /* IMPORTANT: resta nascosto di default */
     .form-success {
-      display: none;
-      background: #dcfce7; color: #166534; padding: 16px;
+      display: none; background: #dcfce7; color: #166534; padding: 16px;
+      border-radius: 8px; margin-top: 16px; text-align: center; font-weight: 600;
+    }
+    .form-error {
+      display: none; background: #fee2e2; color: #991b1b; padding: 16px;
       border-radius: 8px; margin-top: 16px; text-align: center; font-weight: 600;
     }
 
     .example-report {
-      background: white; border: 2px solid #e2e8f0; border-radius: 12px;
-      padding: 40px; margin-bottom: 60px; text-align: center;
+  max-width: 760px;
+  margin: 0 auto;
+}
+    .example-header { text-align: center; margin-bottom: 22px; }
+    .example-header h3 {
+      font-size: 30px; line-height: 1.15; margin: 0 0 8px; color: #0f172a;
     }
-    .example-report h3 { font-size: 24px; font-weight: 700; margin-bottom: 24px; color: #0f172a; }
-    .report-preview { background: #f8fafc; border-radius: 8px; padding: 32px; margin-bottom: 24px; text-align: left; }
-    .report-item { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e2e8f0; }
-    .report-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-    .report-label {
-      font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase;
-      letter-spacing: 0.5px; margin-bottom: 8px;
+    .example-header p { margin: 0; color: #64748b; font-size: 16px; }
+    .report-preview {
+  background: white;
+  border: 1px solid rgba(15, 23, 42, 0.10);
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+  overflow: hidden;
+}
+    .report-section { padding: 18px 0; border-top: 1px solid rgba(148,163,184,.24); }
+    .report-section:first-child { border-top: none; padding-top: 0; }
+    .report-kicker {
+      font-size: 12px; letter-spacing: .14em; color: #64748b; font-weight: 800;
     }
-    .report-value { font-size: 16px; color: #0f172a; font-weight: 600; }
-    .report-note { font-size: 14px; color: #64748b; margin-top: 8px; }
-    .example-report p { color: #64748b; font-size: 14px; }
+    .report-title {
+      font-size: 28px; font-weight: 900; margin-top: 8px; color: #0f172a;
+    }
+    .report-score {
+      font-size: 20px; font-weight: 900; margin-top: 10px; color: #0f172a;
+    }
+    .report-sub {
+      margin-top: 10px; color: #475569; line-height: 1.55;
+    }
+    .report-line {
+      display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+      margin-top: 10px; font-weight: 700; color: #0f172a;
+    }
+    
+.status-badge {
+  display: inline-flex;
+  width: 20px; height: 20px;
+  border-radius: 999px;
+  align-items: center; justify-content: center;
+  font-size: 14px; font-weight: 900;
+  position: static;
+  padding: 0;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+    .status-badge.ok {
+      background: rgba(34,197,94,.12); color: #16a34a;
+      display: inline-flex; width: 20px; height: 20px; border-radius: 999px;
+      align-items: center; justify-content: center; font-size: 14px; font-weight: 900;
+    }
+        .status-badge.no {
+      background: rgba(239,68,68,.12); color: #ef4444;
+      display: inline-flex; width: 20px; height: 20px; border-radius: 999px;
+      align-items: center; justify-content: center; font-size: 14px; font-weight: 900;
+    }
+    .dot { color: #94a3b8; margin: 0 2px; }
+    .report-risk { display: flex; align-items: center; gap: 10px; margin-top: 10px; }
+    .risk-dot { width: 14px; height: 14px; border-radius: 999px; }
+    .risk-dot.low {
+      background: #22c55e; box-shadow: 0 0 0 4px rgba(34,197,94,.16);
+    }
+    .risk-title { font-weight: 900; color: #0f172a; font-size: 18px; }
+    .report-alt { margin-top: 10px; font-weight: 900; color: #0f172a; }
+    .example-footnote {
+      text-align: center; margin-top: 16px; color: #64748b; font-size: 14px;
+    }
 
     footer {
       background: #0f172a; color: white; padding: 40px 20px; text-align: center;
@@ -112,37 +317,361 @@
     }
     .footer-content { max-width: 900px; margin: 0 auto; }
     .footer-copyright { font-size: 14px; margin-bottom: 20px; opacity: 0.8; }
-    .footer-disclaimer { font-size: 12px; color: #cbd5e1; line-height: 1.6; margin-bottom: 20px; }
+    .footer-disclaimer {
+      font-size: 12px; color: #cbd5e1; line-height: 1.6; margin-bottom: 20px;
+    }
     .footer-links { font-size: 12px; color: #cbd5e1; }
     .footer-links a { color: #3b82f6; text-decoration: none; margin: 0 8px; }
     .footer-links a:hover { text-decoration: underline; }
 
+    /* Cookie banner */
+    .cookie-banner {
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 9999;
+      padding: 14px 16px; background: rgba(15,23,42,.92); color: #e2e8f0;
+      display: none; backdrop-filter: blur(10px);
+    }
+    .cookie-inner {
+      max-width: 980px; margin: 0 auto; display: flex; gap: 12px;
+      align-items: center; justify-content: space-between; flex-wrap: wrap;
+    }
+    .cookie-text {
+      font-size: 13px; line-height: 1.45; max-width: 680px;
+    }
+    .cookie-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .cookie-btn {
+      border: none; border-radius: 999px; padding: 10px 14px;
+      font-weight: 800; font-size: 13px; cursor: pointer;
+    }
+    .cookie-btn.secondary { background: rgba(148,163,184,.18); color: #e2e8f0; }
+    .cookie-btn.primary {
+      background: linear-gradient(135deg,#2563eb,#7c3aed); color: white;
+    }
+
     @media (max-width: 768px) {
-      .hero h1 { font-size: 32px; }
+      .hero h1 { font-size: 36px; }
       .hero p { font-size: 16px; }
       .section-title { font-size: 24px; }
       .solution-grid { grid-template-columns: 1fr; }
       .problems { padding: 24px; }
+      .pricing-section { padding: 40px 24px; }
+      .pricing-card { padding: 30px 20px; }
+      .current-price { font-size: 36px; }
       .form-section { padding: 40px 24px; }
-      .example-report { padding: 24px; }
+      .form-row { grid-template-columns: 1fr; }
     }
-  </style>
-</head>
 
+    @media (max-width: 640px) {
+      .form-row { grid-template-columns: 1fr; }
+    }
+  
+.window-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: rgba(248, 250, 252, 0.9);
+  border-radius: 14px;
+  margin-bottom: 14px;
+}
+.window-bar .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.18);
+  display: inline-block;
+}
+.window-bar .window-title {
+  margin-left: 6px;
+  font-size: 13px;
+  font-weight: 650;
+  color: rgba(15, 23, 42, 0.65);
+  letter-spacing: 0.2px;
+}
+.example-header h3 {
+  font-size: 26px;
+  line-height: 1.15;
+  margin-bottom: 10px;
+}
+.example-header p {
+  font-size: 15px;
+}
+.report-section-title {
+  font-size: 14px;
+  color: rgba(15, 23, 42, 0.70);
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+.report-card {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 14px;
+  padding: 14px 14px;
+  background: rgba(248, 250, 252, 0.6);
+}
+.report-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  background: white;
+  margin-top: 10px;
+}
+.report-line:first-of-type { margin-top: 0; }
+.report-line .left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+.report-line .label {
+  font-weight: 650;
+  color: rgba(15, 23, 42, 0.85);
+  white-space: nowrap;
+}
+.report-line .value {
+  color: rgba(15, 23, 42, 0.62);
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 360px;
+}
+@media (max-width: 860px) {
+  .example-report { max-width: 100%; }
+  .report-line .value { max-width: 240px; }
+}
+@media (max-width: 520px) {
+  .report-preview { padding: 14px; }
+  .window-bar { padding: 9px 10px; }
+  .report-line { padding: 10px 10px; }
+  .report-line .value { max-width: 180px; }
+}
+
+
+              .score-summary {
+                display: grid;
+                grid-template-columns: 1.2fr 0.8fr;
+                gap: 14px;
+                padding: 14px;
+                border: 1px solid rgba(15, 23, 42, 0.08);
+                border-radius: 16px;
+                background: linear-gradient(180deg, rgba(248, 250, 252, 0.85), rgba(255, 255, 255, 0.7));
+                margin-bottom: 14px;
+              }
+              .score-label {
+                font-size: 13px;
+                font-weight: 650;
+                color: rgba(15, 23, 42, 0.62);
+                letter-spacing: 0.2px;
+                margin-bottom: 6px;
+              }
+              .score-value {
+                font-size: 34px;
+                font-weight: 850;
+                letter-spacing: -0.6px;
+                color: rgba(15, 23, 42, 0.92);
+                line-height: 1;
+                margin-bottom: 8px;
+              }
+              .score-suffix {
+                font-size: 14px;
+                font-weight: 750;
+                color: rgba(15, 23, 42, 0.55);
+                margin-left: 4px;
+              }
+              .score-sub {
+                font-size: 14px;
+                color: rgba(15, 23, 42, 0.62);
+                line-height: 1.35;
+              }
+              .score-right {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                justify-content: center;
+              }
+              .score-pill {
+                font-size: 13px;
+                color: rgba(15, 23, 42, 0.65);
+                border: 1px solid rgba(15, 23, 42, 0.08);
+                border-radius: 999px;
+                padding: 9px 10px;
+                background: rgba(255, 255, 255, 0.85);
+                white-space: nowrap;
+              }
+              .report-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+              }
+              .report-grid .report-line {
+                margin-top: 0;
+              }
+              .report-line .label {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+              }
+              .mini-icon {
+                width: 18px;
+                height: 18px;
+                border-radius: 6px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid rgba(15, 23, 42, 0.08);
+                background: rgba(248, 250, 252, 0.9);
+                font-size: 12px;
+                color: rgba(15, 23, 42, 0.75);
+                flex-shrink: 0;
+              }
+              @media (max-width: 860px) {
+                .score-summary { grid-template-columns: 1fr; }
+                .score-right { flex-direction: row; flex-wrap: wrap; }
+                .report-grid { grid-template-columns: 1fr; }
+                .score-pill { white-space: normal; }
+              }
+
+.legal-sections{
+  max-width: 980px;
+  margin: 28px auto 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  padding: 0 20px;
+}
+.legal-card{
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 16px;
+  padding: 16px 16px;
+  text-align: left;
+}
+.legal-card h4{
+  margin: 0 0 10px;
+  font-size: 16px;
+  font-weight: 750;
+  letter-spacing: 0.2px;
+}
+.legal-card p{
+  margin: 0 0 10px;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.5;
+  font-size: 14px;
+}
+.legal-card p:last-child{ margin-bottom: 0; }
+@media (max-width: 640px){
+  .legal-sections{ padding: 0 16px; }
+  .legal-card{ padding: 14px; }
+}
+#privacy, #terms, #contact { scroll-margin-top: 90px; }
+/* Modal (Legal) */
+.modal-backdrop{
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.62);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease;
+  z-index: 9998;
+}
+.modal{
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease, transform 180ms ease;
+  transform: translateY(8px);
+  z-index: 9999;
+}
+.modal-card{
+  width: min(820px, 100%);
+  max-height: min(78vh, 720px);
+  overflow: auto;
+  background: rgba(15, 23, 42, 0.92);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 18px;
+  box-shadow: 0 18px 60px rgba(0,0,0,0.35);
+  padding: 18px 18px;
+  text-align: left;
+  position: relative;
+}
+.modal-card h3{
+  margin: 6px 0 12px;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  color: rgba(255,255,255,0.95);
+}
+.modal-card p{
+  margin: 0 0 12px;
+  color: rgba(255,255,255,0.86);
+  line-height: 1.55;
+  font-size: 14px;
+}
+.modal-card p:last-child{ margin-bottom: 0; }
+.modal-close{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.92);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+.modal-close:hover{
+  background: rgba(255,255,255,0.10);
+}
+body.modal-open{
+  overflow: hidden;
+}
+.modal.is-open,
+.modal-backdrop.is-open{
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal.is-open{ transform: translateY(0); }
+</style>
+</head>
 <body>
+  <!-- URGENCY BANNER -->
+  <div class="urgency-banner">
+    🔥 Beta Launch: <strong id="spotsLeft">43</strong>/50 spots left at €9 — Price increases to €19 soon
+  </div>
+
   <section class="hero">
     <div class="container">
       <div style="width:150px;height:150px;background:#fff;margin:0 auto 30px;display:flex;align-items:center;justify-content:center;border-radius:12px;">
-        <img src="./nameproof-logo-black-red.png" alt="NameProof Logo" style="width:110px;height:110px;object-fit:contain;">
+        <img src="./nameproof-logo-black-red.png" alt="NameProof - AI brand name generator logo" style="width:110px;height:110px;object-fit:contain;">
       </div>
 
       <h1>NameProof</h1>
       <p>Generate brand names that work worldwide</p>
-      <p style="font-size:16px;margin-bottom:20px;">AI-powered naming with global validation in 60 seconds</p>
-      <button class="hero-cta" onclick="document.querySelector('.form-section').scrollIntoView({behavior:'smooth'})">
-        Try Free (5 names)
-      </button>
-      <p class="hero-subtext">Private beta &mdash; invites sent weekly. No spam</p>
+      <p style="font-size:16px;margin-bottom:20px;">AI-powered naming with global validation in 24 hours</p>
+      
+      <div class="hero-actions" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <a href="https://buy.stripe.com/8x228tbfp83CdMPf7bb3q01" class="hero-cta" target="_blank" rel="noopener">
+          Get Your Report - €9
+        </a>
+        <a href="#free-names" class="hero-cta secondary">
+          Get 3 Free Names
+        </a>
+      </div>
+      
+      <p class="hero-subtext">Beta pricing • Delivered in 24 hours</p>
     </div>
   </section>
 
@@ -150,9 +679,9 @@
     <div class="container">
       <h2 class="section-title">Naming mistakes are expensive</h2>
       <div class="problems">
-        <div class="problem-item"><div class="problem-icon">&#10060;</div><div class="problem-text">Sounds great in English, awkward in other languages</div></div>
-        <div class="problem-item"><div class="problem-icon">&#10060;</div><div class="problem-text">Domain or social handles already taken</div></div>
-        <div class="problem-item"><div class="problem-icon">&#10060;</div><div class="problem-text">Trademark risk discovered too late</div></div>
+        <div class="problem-item"><div class="problem-icon">❌</div><div class="problem-text">Sounds great in English, awkward in other languages</div></div>
+        <div class="problem-item"><div class="problem-icon">❌</div><div class="problem-text">Domain or social handles already taken</div></div>
+        <div class="problem-item"><div class="problem-icon">❌</div><div class="problem-text">Trademark risk discovered too late</div></div>
       </div>
     </div>
   </section>
@@ -162,22 +691,22 @@
       <h2 class="section-title">What you'll get</h2>
       <div class="solution-grid">
         <div class="solution-card">
-          <div class="solution-icon">&#127757;</div>
+          <div class="solution-icon">🌍</div>
           <h3>Global Pronunciation</h3>
           <p>Check how your name sounds in 8 languages with cultural fit notes</p>
         </div>
         <div class="solution-card">
-          <div class="solution-icon">&#128279;</div>
-          <h3>Domain &amp; Social Check</h3>
+          <div class="solution-icon">🔗</div>
+          <h3>Domain & Social Check</h3>
           <p>Real-time availability for .com, .ai, .io and all major social handles</p>
         </div>
         <div class="solution-card">
-          <div class="solution-icon">&#9888;&#65039;</div>
+          <div class="solution-icon">⚠️</div>
           <h3>Risk Flags</h3>
           <p>Trademark hints and brand confusion alerts before you invest</p>
         </div>
         <div class="solution-card">
-          <div class="solution-icon">&#10024;</div>
+          <div class="solution-icon">✨</div>
           <h3>AI Alternatives</h3>
           <p>Get stronger alternatives if your top choice has issues</p>
         </div>
@@ -185,139 +714,475 @@
     </div>
   </section>
 
-  <section class="form-section">
+  <!-- PRICING SECTION -->
+  <section class="pricing-section" id="pricing">
     <div class="container">
-      <h2>Join the private beta</h2>
-      <p>Get your validation report delivered by email</p>
-
-      <div class="form-container">
-        <form id="betaForm" onsubmit="handleSubmit(event)">
-          <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" placeholder="John Doe" required />
+      <h2>Beta Launch Pricing</h2>
+      <p class="pricing-subtitle">Limited to first 50 users • Price increases after beta</p>
+      
+      <div class="pricing-card">
+        <div class="pricing-badge">BETA SPECIAL</div>
+        
+        <div class="pricing-header">
+          <h3>Full Brand Report</h3>
+          <div class="price-container">
+            <span class="original-price">€19</span>
+            <span class="current-price">€9</span>
           </div>
+          <p class="price-note">One-time payment • 24h delivery</p>
+        </div>
 
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="you@example.com" required />
-          </div>
+        <ul class="features-list">
+          <li>30+ brand name options tailored to your business</li>
+          <li>Global pronunciation analysis (8 languages)</li>
+          <li>Domain availability (.com, .ai, .io)</li>
+          <li>Social handle check (Instagram, X/Twitter, TikTok)</li>
+          <li>Trademark risk assessment</li>
+          <li>Top 5 picks scored + shortlist rationale</li>
+          <li>AI-powered alternatives</li>
+          <li>24-hour delivery via email</li>
+        </ul>
 
-          <div class="form-group">
-            <label for="brandName">Brand Name (optional)</label>
-            <input type="text" id="brandName" name="brandName" placeholder="Your brand name" />
-          </div>
+        <a href="https://buy.stripe.com/8x228tbfp83CdMPf7bb3q01" class="cta-button" target="_blank" rel="noopener">
+          Get Your Report Now - €9
+        </a>
 
-          <button type="submit" class="submit-btn" id="submitBtn">Get Early Access</button>
-        </form>
+        <div class="spots-left">
+          ⚡ Only <strong id="spotsLeft2">43</strong> spots left at this price
+        </div>
 
-        <!-- Success message fuori dal form -->
-        <div class="form-success" id="successMessage">&#10003; Thanks! Check your email for confirmation.</div>
+        <div class="guarantee">
+          🔒 Secure payment via Stripe • Full report delivered within 24 hours
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- FREE NAMES FORM -->
+  <section class="form-section" id="free-names">
+    <div class="container">
+      <h2>Get 3 Free Names (Beta Preview)</h2>
+      <p>Try NameProof for free. Tell us what you're building (or your existing name) and we'll email you 3 tailored suggestions within 24 hours.</p>
+      
+      <div class="form-container">
+        <form id="betaForm">
+          <div class="form-group" style="grid-column: 1 / -1;">
+            <label>Do you already have a brand name? <span aria-hidden="true">*</span></label>
+            <div class="radio-group">
+              <label class="radio">
+                <input type="radio" name="hasName" value="no" checked />
+                No, help me find one
+              </label>
+              <label class="radio">
+                <input type="radio" name="hasName" value="yes" />
+                Yes, validate my name
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group" id="groupBusinessIdea" style="grid-column: 1 / -1;">
+            <label for="businessIdea">What are you building? <span aria-hidden="true">*</span></label>
+            <textarea id="businessIdea" name="businessIdea" placeholder="Describe your business in 1–2 sentences (e.g., Premium coffee delivery for offices)" required></textarea>
+          </div>
+
+          <div class="form-group" id="groupBrandName" style="grid-column: 1 / -1; display:none;">
+            <label for="brandName">Your brand name <span aria-hidden="true">*</span></label>
+            <input type="text" id="brandName" name="brandName" placeholder="Enter the name you want us to validate" />
+            <div class="helper">We'll analyze this exact name and include alternatives if needed.</div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fullName">Name <span aria-hidden="true">*</span></label>
+              <input type="text" id="fullName" name="fullName" placeholder="Your name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email <span aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" placeholder="you@company.com" required />
+            </div>
+
+            <div class="form-group">
+              <label for="businessType">Business type</label>
+              <select id="businessType" name="businessType">
+                <option value="">Select (optional)</option>
+                <option value="SaaS">SaaS</option>
+                <option value="E-commerce">E-commerce</option>
+                <option value="Agency">Agency</option>
+                <option value="Creator">Creator</option>
+                <option value="Local Business">Local Business</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="style">Brand tone</label>
+              <select id="style" name="style">
+                <option value="">Select (optional)</option>
+                <option value="Premium">Premium</option>
+                <option value="Tech">Tech</option>
+                <option value="Friendly">Friendly</option>
+                <option value="Bold">Bold</option>
+                <option value="Minimal">Minimal</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="market">Target market</label>
+              <select id="market" name="market">
+                <option value="">Select (optional)</option>
+                <option value="Global">Global</option>
+                <option value="US">US</option>
+                <option value="EU">EU</option>
+                <option value="UK">UK</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="notes">Notes</label>
+            <input type="text" id="notes" name="notes" placeholder="Anything we should know? (optional)" />
+          </div>
+
+          <button type="submit" class="submit-btn" id="submitBtn">Request Private Beta</button>
+          
+          <div class="form-success" id="successMessage">✓ Sent! Check your email soon.</div>
+          <div class="form-error" id="errorMessage"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXAMPLE REPORT -->
   <section class="section">
     <div class="container">
-      <div class="example-report">
-        <h3>Example Report Preview</h3>
+      <div class="example-report" id="example">
+        <div class="example-header">
+          <h3>Example Report Preview</h3>
+          <p>Here's a condensed sample of what you'll receive (format & sections)</p>
+        </div>
+
         <div class="report-preview">
-          <div class="report-item"><div class="report-label">Brand Name</div><div class="report-value">Zenith</div></div>
-          <div class="report-item">
-            <div class="report-label">Global Sound Score</div>
-            <div class="report-value">8.5/10</div>
-            <div class="report-note">Sounds professional in English, Spanish, French, German, Italian, Portuguese, Japanese, and Mandarin</div>
+        <div class="window-bar" aria-hidden="true">
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <span class="window-title">Example report preview</span>
+        </div>
+          <div class="report-section">
+            <div class="report-kicker">BRAND NAME</div>
+            <div class="report-title">Zenvora</div>
           </div>
-          <div class="report-item">
-            <div class="report-label">Domain Availability</div>
-            <div class="report-value">&#10003; zenith.com (available) &bull; &#10003; zenith.ai (available) &bull; &#10007; zenith.io (taken)</div>
+
+          <div class="report-section">
+            <div class="report-kicker">OVERALL SCORE</div>
+            <div class="report-score">8.5/10 — Strong Global Fit</div>
+            <div class="report-sub">Professional sound across major languages, no negative associations found</div>
           </div>
-          <div class="report-item">
-            <div class="report-label">Social Handles</div>
-            <div class="report-value">&#10003; @zenith (Instagram available) &bull; &#10003; @zenith (TikTok available) &bull; &#10007; @zenith (Twitter taken)</div>
+
+          <div class="report-section">
+            <div class="report-kicker">DOMAIN AVAILABILITY</div>
+            <div class="report-line">
+              <span class="status-badge ok">✓</span><span class="line-text">zenvora.com (available)</span>
+              <span class="dot">•</span>
+              <span class="status-badge ok">✓</span><span class="line-text">zenvora.ai (available)</span>
+              <span class="dot">•</span>
+              <span class="status-badge no">×</span><span class="line-text">zenvora.io (taken)</span>
+            </div>
+            <div class="report-sub">Recommended: secure the .com immediately ($12/year)</div>
           </div>
-          <div class="report-item">
-            <div class="report-label">Trademark Risk</div>
-            <div class="report-value">&#128993; Medium Risk</div>
-            <div class="report-note">Similar marks exist in tech sector. Recommend legal review before launch.</div>
+
+          <div class="report-section">
+            <div class="report-kicker">SOCIAL HANDLES</div>
+            <div class="report-line">
+              <span class="status-badge ok">✓</span><span class="line-text">@zenvora (Instagram)</span>
+              <span class="dot">•</span>
+              <span class="status-badge no">×</span><span class="line-text">@zenvora (X/Twitter — try @getzenvora)</span>
+              <span class="dot">•</span>
+              <span class="status-badge ok">✓</span><span class="line-text">@zenvora (TikTok)</span>
+            </div>
           </div>
-          <div class="report-item">
-            <div class="report-label">Alternatives</div>
-            <div class="report-value">Apex (9.2/10) &bull; Vertex (8.8/10) &bull; Nexus (8.6/10)</div>
+
+          <div class="report-section">
+            <div class="report-kicker">TRADEMARK RISK</div>
+            <div class="report-risk">
+              <span class="risk-dot low"></span>
+              <span class="risk-title">Low Risk</span>
+            </div>
+            <div class="report-sub">No major conflicts found in USPTO/EUIPO databases. Recommended: final check with an IP lawyer before heavy investment.</div>
+          </div>
+
+          <div class="report-section">
+            <div class="report-kicker">ALTERNATIVE OPTIONS</div>
+            <div class="report-alt">Zenovex (9.1/10) <span class="dot">•</span> Novaza (8.7/10) <span class="dot">•</span> Vezona (8.4/10)</div>
           </div>
         </div>
-        <p>Your real report will be personalized based on your brand and industry</p>
+
+        <p class="example-footnote">Your report will be personalized based on your industry and target market.</p>
       </div>
     </div>
   </section>
 
   <footer>
     <div class="footer-content">
-      <div class="footer-copyright">&copy; 2026 NameProof. All rights reserved.</div>
+      <div class="footer-copyright">© 2026 NameProof. All rights reserved.</div>
       <div class="footer-disclaimer">
-        NameProof is currently in private beta. The analysis and reports provided are for informational and creative purposes only and do not constitute legal advice or a formal trademark guarantee. While we help identify potential risks, we recommend consulting a legal professional for final trademark registrations.
+        NameProof provides creative naming suggestions and basic risk assessments for informational purposes only. This does not constitute legal advice or a formal trademark guarantee. We recommend consulting an intellectual property lawyer for final trademark clearance before significant brand investment.
       </div>
-      <div class="footer-links">
-        <a href="#">Privacy Policy</a> &bull; <a href="#">Terms of Service</a> &bull; <a href="#">Contact</a>
+<div class="footer-links">
+        <a href="#" class="footer-link js-open-modal" data-modal="privacyModal">Privacy Policy</a>
+        <span aria-hidden="true">•</span>
+        <a href="#" class="footer-link js-open-modal" data-modal="termsModal">Terms of Service</a>
+        <span aria-hidden="true">•</span>
+        <a href="#" class="footer-link js-open-modal" data-modal="contactModal">Contact</a>
       </div>
     </div>
   </footer>
 
+  <!-- Cookie Banner -->
+  <div class="cookie-banner" id="cookieBanner" aria-live="polite">
+    <div class="cookie-inner">
+      <div class="cookie-text">
+        We use essential cookies to make this site work. With your permission, we may also use analytics cookies to improve the experience.
+      </div>
+      <div class="cookie-actions">
+        <button class="cookie-btn secondary" id="cookieEssential">Essential only</button>
+        <button class="cookie-btn primary" id="cookieAccept">Accept analytics</button>
+      </div>
+    </div>
+  </div>
+
   <script>
-    const MAKE_WEBHOOK_URL = "https://hook.eu1.make.com/gaa9lgj9ms6mz7q64rt69o3156kdm8wh";
+    // 🔴 REPLACE WITH YOUR MAKE.COM WEBHOOK URL
+    const webhookUrl = 'https://hook.eu1.make.com/gaa9lgj9ms6mz7q64rt69o3156kdm8wh';
 
-    // RESET: dopo refresh deve SEMPRE tornare il form (e nascondere il messaggio)
-    document.addEventListener("DOMContentLoaded", () => {
-      const form = document.getElementById("betaForm");
-      const successMessage = document.getElementById("successMessage");
-      if (form) form.style.display = "block";
-      if (successMessage) successMessage.style.display = "none";
-    });
+    const form = document.getElementById('betaForm');
+    const successMessage = document.getElementById('successMessage');
+    const errorMessage = document.getElementById('errorMessage');
+    const groupBusinessIdea = document.getElementById('groupBusinessIdea');
+    const groupBrandName = document.getElementById('groupBrandName');
+    const businessIdea = document.getElementById('businessIdea');
+    const brandName = document.getElementById('brandName');
 
+    // Toggle between "help me find" vs "validate my name"
+    function syncConditionalFields() {
+      const hasName = document.querySelector('input[name="hasName"]:checked')?.value || 'no';
+      
+      if (hasName === 'yes') {
+        groupBrandName.style.display = 'block';
+        groupBusinessIdea.style.display = 'none';
+        brandName.required = true;
+        businessIdea.required = false;
+      } else {
+        groupBrandName.style.display = 'none';
+        groupBusinessIdea.style.display = 'block';
+        brandName.required = false;
+        businessIdea.required = true;
+      }
+    }
+
+    document.querySelectorAll('input[name="hasName"]').forEach(r => 
+      r.addEventListener('change', syncConditionalFields)
+    );
+    syncConditionalFields();
+
+    // Form submission
     async function handleSubmit(event) {
       event.preventDefault();
 
-      const form = document.getElementById("betaForm");
-      const successMessage = document.getElementById("successMessage");
-      const btn = document.getElementById("submitBtn");
-
-      const name = document.getElementById("name").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const brandName = document.getElementById("brandName").value.trim();
-
-      const oldText = btn.textContent;
-      btn.disabled = true;
-      btn.textContent = "Sending...";
-
       try {
+        errorMessage.style.display = 'none';
+        successMessage.style.display = 'none';
+
+        const fd = new FormData(form);
         const payload = {
-          name,
-          email,
-          brandName,
-          source: "nameproof-landing",
-          page: window.location.href,
-          timestamp: new Date().toISOString()
+          timestamp: new Date().toISOString(),
+          name: fd.get('fullName') || '',
+          email: fd.get('email') || '',
+          hasName: fd.get('hasName') || 'no',
+          businessIdea: fd.get('businessIdea') || '',
+          brandName: fd.get('brandName') || '',
+          businessType: fd.get('businessType') || '',
+          style: fd.get('style') || '',
+          market: fd.get('market') || '',
+          notes: fd.get('notes') || ''
         };
 
-        const res = await fetch(MAKE_WEBHOOK_URL, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
+        if (!payload.name) throw new Error('Please enter your name.');
+        if (!payload.email) throw new Error('Please enter your email.');
+        if (payload.hasName === 'yes' && !payload.brandName) throw new Error('Please enter your brand name.');
+        if (payload.hasName !== 'yes' && !payload.businessIdea) throw new Error('Please describe what you are building.');
+
+        const res = await fetch(webhookUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload)
         });
 
-        if (!res.ok) throw new Error("Webhook error: " + res.status);
+        if (!res.ok) throw new Error('Submission failed. Please try again.');
 
-        // mostra messaggio e nasconde form (e resta così finché non fai refresh)
-        form.style.display = "none";
-        successMessage.style.display = "block";
-
-      } catch (err) {
-        console.error(err);
-        alert("Error sending data. Please try again.");
-      } finally {
-        btn.disabled = false;
-        btn.textContent = oldText;
+        successMessage.style.display = 'block';
+        form.reset();
+        syncConditionalFields();
+      } catch (e) {
+        errorMessage.textContent = e.message || 'Something went wrong. Please try again.';
+        errorMessage.style.display = 'block';
       }
     }
-  </script>
+
+    form.addEventListener('submit', handleSubmit);
+
+    // Smooth scroll for anchors
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href');
+        if (!id || id === '#') return;
+        const target = document.querySelector(id);
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.replaceState(null, '', id);
+      });
+    });
+
+    // Cookie banner (optional - set to false if you don't use tracking)
+    const ENABLE_COOKIE_BANNER = true;
+    const banner = document.getElementById('cookieBanner');
+    const btnEssential = document.getElementById('cookieEssential');
+    const btnAccept = document.getElementById('cookieAccept');
+
+    function setConsent(value){
+      localStorage.setItem('np_cookie_consent', value);
+      if (banner) banner.style.display = 'none';
+      // If you add analytics later, load them ONLY after consent === 'all'
+      // Example: if (value === 'all') { loadGoogleAnalytics(); }
+    }
+
+    function maybeShowBanner(){
+      if (!ENABLE_COOKIE_BANNER) return;
+      const consent = localStorage.getItem('np_cookie_consent');
+      if (!consent && banner) banner.style.display = 'block';
+    }
+
+    if (btnEssential) btnEssential.addEventListener('click', () => setConsent('essential'));
+    if (btnAccept) btnAccept.addEventListener('click', () => setConsent('all'));
+    maybeShowBanner();
+  // Legal modals (delegated + DOM-safe)
+(function () {
+  function qs(sel, root=document){ return root.querySelector(sel); }
+  function qsa(sel, root=document){ return Array.from(root.querySelectorAll(sel)); }
+
+  function ready(fn){
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fn);
+    else fn();
+  }
+
+  ready(function(){
+    const backdrop = document.getElementById('modalBackdrop');
+    if (!backdrop) return;
+
+    let activeModal = null;
+    let lastFocus = null;
+
+    function openModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (!modal) return;
+
+      lastFocus = document.activeElement;
+      activeModal = modal;
+
+      backdrop.classList.add('is-open');
+      modal.classList.add('is-open');
+      document.body.classList.add('modal-open');
+
+      backdrop.setAttribute('aria-hidden', 'false');
+      modal.setAttribute('aria-hidden', 'false');
+
+      const closeBtn = qs('.modal-close', modal);
+      if (closeBtn) closeBtn.focus();
+    }
+
+    function closeModal() {
+      if (!activeModal) return;
+
+      activeModal.classList.remove('is-open');
+      backdrop.classList.remove('is-open');
+      document.body.classList.remove('modal-open');
+
+      activeModal.setAttribute('aria-hidden', 'true');
+      backdrop.setAttribute('aria-hidden', 'true');
+
+      const toFocus = lastFocus;
+      activeModal = null;
+      lastFocus = null;
+      if (toFocus && typeof toFocus.focus === 'function') toFocus.focus();
+    }
+
+    // Delegated click for openers
+    document.addEventListener('click', function(e){
+      const opener = e.target.closest && e.target.closest('.js-open-modal');
+      if (opener) {
+        e.preventDefault();
+        const id = opener.getAttribute('data-modal');
+        if (id) openModal(id);
+        return;
+      }
+
+      // Close button
+      const closeBtn = e.target.closest && e.target.closest('.modal-close');
+      if (closeBtn) {
+        e.preventDefault();
+        closeModal();
+        return;
+      }
+
+      // Click on backdrop
+      if (e.target === backdrop) closeModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+  });
+})();</script>
+<!-- Legal Modals -->
+<div class="modal-backdrop" id="modalBackdrop" aria-hidden="true"></div>
+
+<div class="modal" id="privacyModal" role="dialog" aria-modal="true" aria-labelledby="privacyTitle" aria-hidden="true">
+  <div class="modal-card">
+    <button class="modal-close" type="button" aria-label="Close">×</button>
+    <h3 id="privacyTitle">Privacy Policy</h3>
+    <p><strong>What we collect.</strong> When you submit the form, we collect the information you provide (e.g., business idea / brand name, market, style preferences) and your email address so we can deliver your report.</p>
+    <p><strong>How we use it.</strong> We use your data only to generate and send the NameProof report and to provide customer support. We do not sell your personal data.</p>
+    <p><strong>Processors.</strong> Payments are handled by Stripe. Form submissions are processed via our automation provider (Make.com) to deliver reports.</p>
+    <p><strong>Retention.</strong> We keep submissions for a limited period to provide the service and handle support. You can request deletion at any time.</p>
+    <p><strong>Your rights.</strong> You can request access, correction, or deletion of your data by contacting us.</p>
+  </div>
+</div>
+
+<div class="modal" id="termsModal" role="dialog" aria-modal="true" aria-labelledby="termsTitle" aria-hidden="true">
+  <div class="modal-card">
+    <button class="modal-close" type="button" aria-label="Close">×</button>
+    <h3 id="termsTitle">Terms of Service</h3>
+    <p><strong>Service.</strong> NameProof provides AI-assisted naming suggestions and basic availability/risk signals for informational purposes only.</p>
+    <p><strong>No legal advice.</strong> We are not a law firm and do not provide legal advice. Trademark clearance requires professional review.</p>
+    <p><strong>Delivery.</strong> We aim to deliver reports within the timeframe shown on the site; delays may occur due to volume or third-party services.</p>
+    <p><strong>Refunds.</strong> If we cannot deliver your report, contact us and we will make it right (including a refund when appropriate).</p>
+    <p><strong>Acceptable use.</strong> You agree not to use the service for unlawful purposes or to infringe others’ rights.</p>
+  </div>
+</div>
+
+<div class="modal" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="contactTitle" aria-hidden="true">
+  <div class="modal-card">
+    <button class="modal-close" type="button" aria-label="Close">×</button>
+    <h3 id="contactTitle">Contact</h3>
+    <p>For support, questions, or data requests, email us at
+      <a class="footer-link" href="mailto:hello@nameproof.io">hello@nameproof.io</a>.
+    </p>
+    <p>If you have an order/payment issue, include your email used at checkout and (if available) your Stripe receipt reference.</p>
+  </div>
+</div>
+
 </body>
 </html>
