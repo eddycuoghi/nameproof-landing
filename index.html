@@ -113,7 +113,6 @@
       background: #ef4444; color: white; padding: 6px 16px;
       border-radius: 20px; font-size: 12px; font-weight: 700;
       text-transform: uppercase; letter-spacing: 0.5px;
-    
       z-index: 2;
       line-height: 1;
       white-space: nowrap;
@@ -242,22 +241,22 @@
     }
 
     .example-report {
-  max-width: 760px;
-  margin: 0 auto;
-}
+      max-width: 760px;
+      margin: 0 auto;
+    }
     .example-header { text-align: center; margin-bottom: 22px; }
     .example-header h3 {
       font-size: 30px; line-height: 1.15; margin: 0 0 8px; color: #0f172a;
     }
     .example-header p { margin: 0; color: #64748b; font-size: 16px; }
     .report-preview {
-  background: white;
-  border: 1px solid rgba(15, 23, 42, 0.10);
-  border-radius: 18px;
-  padding: 18px;
-  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
-  overflow: hidden;
-}
+      background: white;
+      border: 1px solid rgba(15, 23, 42, 0.10);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+      overflow: hidden;
+    }
     .report-section { padding: 18px 0; border-top: 1px solid rgba(148,163,184,.24); }
     .report-section:first-child { border-top: none; padding-top: 0; }
     .report-kicker {
@@ -277,27 +276,23 @@
       margin-top: 10px; font-weight: 700; color: #0f172a;
     }
     
-.status-badge {
-  display: inline-flex;
-  width: 20px; height: 20px;
-  border-radius: 999px;
-  align-items: center; justify-content: center;
-  font-size: 14px; font-weight: 900;
-  position: static;
-  padding: 0;
-  line-height: 1;
-  flex-shrink: 0;
-}
+    .status-badge {
+      display: inline-flex;
+      width: 20px; height: 20px;
+      border-radius: 999px;
+      align-items: center; justify-content: center;
+      font-size: 14px; font-weight: 900;
+      position: static;
+      padding: 0;
+      line-height: 1;
+      flex-shrink: 0;
+    }
 
     .status-badge.ok {
       background: rgba(34,197,94,.12); color: #16a34a;
-      display: inline-flex; width: 20px; height: 20px; border-radius: 999px;
-      align-items: center; justify-content: center; font-size: 14px; font-weight: 900;
     }
-        .status-badge.no {
+    .status-badge.no {
       background: rgba(239,68,68,.12); color: #ef4444;
-      display: inline-flex; width: 20px; height: 20px; border-radius: 999px;
-      align-items: center; justify-content: center; font-size: 14px; font-weight: 900;
     }
     .dot { color: #94a3b8; margin: 0 2px; }
     .report-risk { display: flex; align-items: center; gap: 10px; margin-top: 10px; }
@@ -347,6 +342,84 @@
       background: linear-gradient(135deg,#2563eb,#7c3aed); color: white;
     }
 
+    /* Modal (Legal) */
+    .modal-backdrop{
+      position: fixed;
+      inset: 0;
+      background: rgba(2, 6, 23, 0.62);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 180ms ease;
+      z-index: 9998;
+    }
+    .modal{
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 22px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 180ms ease, transform 180ms ease;
+      transform: translateY(8px);
+      z-index: 9999;
+    }
+    .modal-card{
+      width: min(820px, 100%);
+      max-height: min(78vh, 720px);
+      overflow: auto;
+      background: rgba(15, 23, 42, 0.92);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 18px;
+      box-shadow: 0 18px 60px rgba(0,0,0,0.35);
+      padding: 18px 18px;
+      text-align: left;
+      position: relative;
+    }
+    .modal-card h3{
+      margin: 6px 0 12px;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      color: rgba(255,255,255,0.95);
+    }
+    .modal-card p{
+      margin: 0 0 12px;
+      color: rgba(255,255,255,0.86);
+      line-height: 1.55;
+      font-size: 14px;
+    }
+    .modal-card p:last-child{ margin-bottom: 0; }
+    .modal-close{
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.06);
+      color: rgba(255,255,255,0.92);
+      font-size: 22px;
+      line-height: 1;
+      cursor: pointer;
+    }
+    .modal-close:hover{
+      background: rgba(255,255,255,0.10);
+    }
+    body.modal-open{
+      overflow: hidden;
+    }
+    .modal.is-open,
+    .modal-backdrop.is-open{
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .modal.is-open{ transform: translateY(0); }
+
     @media (max-width: 768px) {
       .hero h1 { font-size: 36px; }
       .hero p { font-size: 16px; }
@@ -359,297 +432,12 @@
       .form-section { padding: 40px 24px; }
       .form-row { grid-template-columns: 1fr; }
     }
-
-    @media (max-width: 640px) {
-      .form-row { grid-template-columns: 1fr; }
-    }
-  
-.window-bar {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 12px;
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  background: rgba(248, 250, 252, 0.9);
-  border-radius: 14px;
-  margin-bottom: 14px;
-}
-.window-bar .dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 999px;
-  background: rgba(15, 23, 42, 0.18);
-  display: inline-block;
-}
-.window-bar .window-title {
-  margin-left: 6px;
-  font-size: 13px;
-  font-weight: 650;
-  color: rgba(15, 23, 42, 0.65);
-  letter-spacing: 0.2px;
-}
-.example-header h3 {
-  font-size: 26px;
-  line-height: 1.15;
-  margin-bottom: 10px;
-}
-.example-header p {
-  font-size: 15px;
-}
-.report-section-title {
-  font-size: 14px;
-  color: rgba(15, 23, 42, 0.70);
-  letter-spacing: 0.3px;
-  text-transform: uppercase;
-}
-.report-card {
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  border-radius: 14px;
-  padding: 14px 14px;
-  background: rgba(248, 250, 252, 0.6);
-}
-.report-line {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 10px;
-  border-radius: 12px;
-  border: 1px solid rgba(15, 23, 42, 0.06);
-  background: white;
-  margin-top: 10px;
-}
-.report-line:first-of-type { margin-top: 0; }
-.report-line .left {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  min-width: 0;
-}
-.report-line .label {
-  font-weight: 650;
-  color: rgba(15, 23, 42, 0.85);
-  white-space: nowrap;
-}
-.report-line .value {
-  color: rgba(15, 23, 42, 0.62);
-  font-size: 14px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  max-width: 360px;
-}
-@media (max-width: 860px) {
-  .example-report { max-width: 100%; }
-  .report-line .value { max-width: 240px; }
-}
-@media (max-width: 520px) {
-  .report-preview { padding: 14px; }
-  .window-bar { padding: 9px 10px; }
-  .report-line { padding: 10px 10px; }
-  .report-line .value { max-width: 180px; }
-}
-
-
-              .score-summary {
-                display: grid;
-                grid-template-columns: 1.2fr 0.8fr;
-                gap: 14px;
-                padding: 14px;
-                border: 1px solid rgba(15, 23, 42, 0.08);
-                border-radius: 16px;
-                background: linear-gradient(180deg, rgba(248, 250, 252, 0.85), rgba(255, 255, 255, 0.7));
-                margin-bottom: 14px;
-              }
-              .score-label {
-                font-size: 13px;
-                font-weight: 650;
-                color: rgba(15, 23, 42, 0.62);
-                letter-spacing: 0.2px;
-                margin-bottom: 6px;
-              }
-              .score-value {
-                font-size: 34px;
-                font-weight: 850;
-                letter-spacing: -0.6px;
-                color: rgba(15, 23, 42, 0.92);
-                line-height: 1;
-                margin-bottom: 8px;
-              }
-              .score-suffix {
-                font-size: 14px;
-                font-weight: 750;
-                color: rgba(15, 23, 42, 0.55);
-                margin-left: 4px;
-              }
-              .score-sub {
-                font-size: 14px;
-                color: rgba(15, 23, 42, 0.62);
-                line-height: 1.35;
-              }
-              .score-right {
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-                justify-content: center;
-              }
-              .score-pill {
-                font-size: 13px;
-                color: rgba(15, 23, 42, 0.65);
-                border: 1px solid rgba(15, 23, 42, 0.08);
-                border-radius: 999px;
-                padding: 9px 10px;
-                background: rgba(255, 255, 255, 0.85);
-                white-space: nowrap;
-              }
-              .report-grid {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 12px;
-              }
-              .report-grid .report-line {
-                margin-top: 0;
-              }
-              .report-line .label {
-                display: inline-flex;
-                align-items: center;
-                gap: 8px;
-              }
-              .mini-icon {
-                width: 18px;
-                height: 18px;
-                border-radius: 6px;
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                border: 1px solid rgba(15, 23, 42, 0.08);
-                background: rgba(248, 250, 252, 0.9);
-                font-size: 12px;
-                color: rgba(15, 23, 42, 0.75);
-                flex-shrink: 0;
-              }
-              @media (max-width: 860px) {
-                .score-summary { grid-template-columns: 1fr; }
-                .score-right { flex-direction: row; flex-wrap: wrap; }
-                .report-grid { grid-template-columns: 1fr; }
-                .score-pill { white-space: normal; }
-              }
-
-.legal-sections{
-  max-width: 980px;
-  margin: 28px auto 0;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 14px;
-  padding: 0 20px;
-}
-.legal-card{
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.10);
-  border-radius: 16px;
-  padding: 16px 16px;
-  text-align: left;
-}
-.legal-card h4{
-  margin: 0 0 10px;
-  font-size: 16px;
-  font-weight: 750;
-  letter-spacing: 0.2px;
-}
-.legal-card p{
-  margin: 0 0 10px;
-  color: rgba(255,255,255,0.85);
-  line-height: 1.5;
-  font-size: 14px;
-}
-.legal-card p:last-child{ margin-bottom: 0; }
-@media (max-width: 640px){
-  .legal-sections{ padding: 0 16px; }
-  .legal-card{ padding: 14px; }
-}
-#privacy, #terms, #contact { scroll-margin-top: 90px; }
-/* Modal (Legal) */
-.modal-backdrop{
-  position: fixed;
-  inset: 0;
-  background: rgba(2, 6, 23, 0.62);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 180ms ease;
-  z-index: 9998;
-}
-.modal{
-  position: fixed;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 22px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 180ms ease, transform 180ms ease;
-  transform: translateY(8px);
-  z-index: 9999;
-}
-.modal-card{
-  width: min(820px, 100%);
-  max-height: min(78vh, 720px);
-  overflow: auto;
-  background: rgba(15, 23, 42, 0.92);
-  border: 1px solid rgba(255,255,255,0.14);
-  border-radius: 18px;
-  box-shadow: 0 18px 60px rgba(0,0,0,0.35);
-  padding: 18px 18px;
-  text-align: left;
-  position: relative;
-}
-.modal-card h3{
-  margin: 6px 0 12px;
-  font-size: 20px;
-  font-weight: 800;
-  letter-spacing: 0.2px;
-  color: rgba(255,255,255,0.95);
-}
-.modal-card p{
-  margin: 0 0 12px;
-  color: rgba(255,255,255,0.86);
-  line-height: 1.55;
-  font-size: 14px;
-}
-.modal-card p:last-child{ margin-bottom: 0; }
-.modal-close{
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 36px;
-  height: 36px;
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.14);
-  background: rgba(255,255,255,0.06);
-  color: rgba(255,255,255,0.92);
-  font-size: 22px;
-  line-height: 1;
-  cursor: pointer;
-}
-.modal-close:hover{
-  background: rgba(255,255,255,0.10);
-}
-body.modal-open{
-  overflow: hidden;
-}
-.modal.is-open,
-.modal-backdrop.is-open{
-  opacity: 1;
-  pointer-events: auto;
-}
-.modal.is-open{ transform: translateY(0); }
-</style>
+  </style>
 </head>
 <body>
   <!-- URGENCY BANNER -->
   <div class="urgency-banner">
-    🔥 Beta Launch: <strong id="spotsLeft">43</strong>/50 spots left at €9 — Price increases to €19 soon
+    🔥 Beta Launch: Limited-time offer at €9 — Price increases to €19 soon
   </div>
 
   <section class="hero">
@@ -718,7 +506,7 @@ body.modal-open{
   <section class="pricing-section" id="pricing">
     <div class="container">
       <h2>Beta Launch Pricing</h2>
-      <p class="pricing-subtitle">Limited to first 50 users • Price increases after beta</p>
+      <p class="pricing-subtitle">Price increases after beta</p>
       
       <div class="pricing-card">
         <div class="pricing-badge">BETA SPECIAL</div>
@@ -748,7 +536,7 @@ body.modal-open{
         </a>
 
         <div class="spots-left">
-          ⚡ Only <strong id="spotsLeft2">43</strong> spots left at this price
+          ⚡ Beta pricing — Regular price €19 after launch
         </div>
 
         <div class="guarantee">
@@ -757,8 +545,7 @@ body.modal-open{
       </div>
     </div>
   </section>
-
-  <!-- FREE NAMES FORM -->
+<!-- FREE NAMES FORM -->
   <section class="form-section" id="free-names">
     <div class="container">
       <h2>Get 3 Free Names (Beta Preview)</h2>
@@ -782,7 +569,7 @@ body.modal-open{
 
           <div class="form-group" id="groupBusinessIdea" style="grid-column: 1 / -1;">
             <label for="businessIdea">What are you building? <span aria-hidden="true">*</span></label>
-            <textarea id="businessIdea" name="businessIdea" placeholder="Describe your business in 1–2 sentences (e.g., Premium coffee delivery for offices)" required></textarea>
+            <textarea id="businessIdea" name="businessIdea" placeholder="Describe your business in 1-2 sentences (e.g., Premium coffee delivery for offices)" required></textarea>
           </div>
 
           <div class="form-group" id="groupBrandName" style="grid-column: 1 / -1; display:none;">
@@ -866,10 +653,6 @@ body.modal-open{
         </div>
 
         <div class="report-preview">
-        <div class="window-bar" aria-hidden="true">
-          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-          <span class="window-title">Example report preview</span>
-        </div>
           <div class="report-section">
             <div class="report-kicker">BRAND NAME</div>
             <div class="report-title">Zenvora</div>
@@ -930,7 +713,7 @@ body.modal-open{
       <div class="footer-disclaimer">
         NameProof provides creative naming suggestions and basic risk assessments for informational purposes only. This does not constitute legal advice or a formal trademark guarantee. We recommend consulting an intellectual property lawyer for final trademark clearance before significant brand investment.
       </div>
-<div class="footer-links">
+      <div class="footer-links">
         <a href="#" class="footer-link js-open-modal" data-modal="privacyModal">Privacy Policy</a>
         <span aria-hidden="true">•</span>
         <a href="#" class="footer-link js-open-modal" data-modal="termsModal">Terms of Service</a>
@@ -950,6 +733,44 @@ body.modal-open{
         <button class="cookie-btn secondary" id="cookieEssential">Essential only</button>
         <button class="cookie-btn primary" id="cookieAccept">Accept analytics</button>
       </div>
+    </div>
+  </div>
+
+  <!-- Legal Modals -->
+  <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true"></div>
+
+  <div class="modal" id="privacyModal" role="dialog" aria-modal="true" aria-labelledby="privacyTitle" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close" type="button" aria-label="Close">×</button>
+      <h3 id="privacyTitle">Privacy Policy</h3>
+      <p><strong>What we collect.</strong> When you submit the form, we collect the information you provide (e.g., business idea / brand name, market, style preferences) and your email address so we can deliver your report.</p>
+      <p><strong>How we use it.</strong> We use your data only to generate and send the NameProof report and to provide customer support. We do not sell your personal data.</p>
+      <p><strong>Processors.</strong> Payments are handled by Stripe. Form submissions are processed via our automation provider (Make.com) to deliver reports.</p>
+      <p><strong>Retention.</strong> We keep submissions for a limited period to provide the service and handle support. You can request deletion at any time.</p>
+      <p><strong>Your rights.</strong> You can request access, correction, or deletion of your data by contacting us.</p>
+    </div>
+  </div>
+
+  <div class="modal" id="termsModal" role="dialog" aria-modal="true" aria-labelledby="termsTitle" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close" type="button" aria-label="Close">×</button>
+      <h3 id="termsTitle">Terms of Service</h3>
+      <p><strong>Service.</strong> NameProof provides AI-assisted naming suggestions and basic availability/risk signals for informational purposes only.</p>
+      <p><strong>No legal advice.</strong> We are not a law firm and do not provide legal advice. Trademark clearance requires professional review.</p>
+      <p><strong>Delivery.</strong> We aim to deliver reports within the timeframe shown on the site; delays may occur due to volume or third-party services.</p>
+      <p><strong>Refunds.</strong> If we cannot deliver your report, contact us and we will make it right (including a refund when appropriate).</p>
+      <p><strong>Acceptable use.</strong> You agree not to use the service for unlawful purposes or to infringe others' rights.</p>
+    </div>
+  </div>
+
+  <div class="modal" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="contactTitle" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close" type="button" aria-label="Close">×</button>
+      <h3 id="contactTitle">Contact</h3>
+      <p>For support, questions, or data requests, email us at
+        <a class="footer-link" href="mailto:hello@nameproof.io" style="color: #3b82f6;">hello@nameproof.io</a>.
+      </p>
+      <p>If you have an order/payment issue, include your email used at checkout and (if available) your Stripe receipt reference.</p>
     </div>
   </div>
 
@@ -1046,7 +867,7 @@ body.modal-open{
       });
     });
 
-    // Cookie banner (optional - set to false if you don't use tracking)
+    // Cookie banner
     const ENABLE_COOKIE_BANNER = true;
     const banner = document.getElementById('cookieBanner');
     const btnEssential = document.getElementById('cookieEssential');
@@ -1055,8 +876,6 @@ body.modal-open{
     function setConsent(value){
       localStorage.setItem('np_cookie_consent', value);
       if (banner) banner.style.display = 'none';
-      // If you add analytics later, load them ONLY after consent === 'all'
-      // Example: if (value === 'all') { loadGoogleAnalytics(); }
     }
 
     function maybeShowBanner(){
@@ -1068,121 +887,79 @@ body.modal-open{
     if (btnEssential) btnEssential.addEventListener('click', () => setConsent('essential'));
     if (btnAccept) btnAccept.addEventListener('click', () => setConsent('all'));
     maybeShowBanner();
-  // Legal modals (delegated + DOM-safe)
-(function () {
-  function qs(sel, root=document){ return root.querySelector(sel); }
-  function qsa(sel, root=document){ return Array.from(root.querySelectorAll(sel)); }
 
-  function ready(fn){
-    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fn);
-    else fn();
-  }
-
-  ready(function(){
-    const backdrop = document.getElementById('modalBackdrop');
-    if (!backdrop) return;
-
-    let activeModal = null;
-    let lastFocus = null;
-
-    function openModal(modalId) {
-      const modal = document.getElementById(modalId);
-      if (!modal) return;
-
-      lastFocus = document.activeElement;
-      activeModal = modal;
-
-      backdrop.classList.add('is-open');
-      modal.classList.add('is-open');
-      document.body.classList.add('modal-open');
-
-      backdrop.setAttribute('aria-hidden', 'false');
-      modal.setAttribute('aria-hidden', 'false');
-
-      const closeBtn = qs('.modal-close', modal);
-      if (closeBtn) closeBtn.focus();
-    }
-
-    function closeModal() {
-      if (!activeModal) return;
-
-      activeModal.classList.remove('is-open');
-      backdrop.classList.remove('is-open');
-      document.body.classList.remove('modal-open');
-
-      activeModal.setAttribute('aria-hidden', 'true');
-      backdrop.setAttribute('aria-hidden', 'true');
-
-      const toFocus = lastFocus;
-      activeModal = null;
-      lastFocus = null;
-      if (toFocus && typeof toFocus.focus === 'function') toFocus.focus();
-    }
-
-    // Delegated click for openers
-    document.addEventListener('click', function(e){
-      const opener = e.target.closest && e.target.closest('.js-open-modal');
-      if (opener) {
-        e.preventDefault();
-        const id = opener.getAttribute('data-modal');
-        if (id) openModal(id);
-        return;
+    // Legal modals
+    (function () {
+      function ready(fn){
+        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fn);
+        else fn();
       }
 
-      // Close button
-      const closeBtn = e.target.closest && e.target.closest('.modal-close');
-      if (closeBtn) {
-        e.preventDefault();
-        closeModal();
-        return;
-      }
+      ready(function(){
+        const backdrop = document.getElementById('modalBackdrop');
+        if (!backdrop) return;
 
-      // Click on backdrop
-      if (e.target === backdrop) closeModal();
-    });
+        let activeModal = null;
+        let lastFocus = null;
 
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeModal();
-    });
-  });
-})();</script>
-<!-- Legal Modals -->
-<div class="modal-backdrop" id="modalBackdrop" aria-hidden="true"></div>
+        function openModal(modalId) {
+          const modal = document.getElementById(modalId);
+          if (!modal) return;
 
-<div class="modal" id="privacyModal" role="dialog" aria-modal="true" aria-labelledby="privacyTitle" aria-hidden="true">
-  <div class="modal-card">
-    <button class="modal-close" type="button" aria-label="Close">×</button>
-    <h3 id="privacyTitle">Privacy Policy</h3>
-    <p><strong>What we collect.</strong> When you submit the form, we collect the information you provide (e.g., business idea / brand name, market, style preferences) and your email address so we can deliver your report.</p>
-    <p><strong>How we use it.</strong> We use your data only to generate and send the NameProof report and to provide customer support. We do not sell your personal data.</p>
-    <p><strong>Processors.</strong> Payments are handled by Stripe. Form submissions are processed via our automation provider (Make.com) to deliver reports.</p>
-    <p><strong>Retention.</strong> We keep submissions for a limited period to provide the service and handle support. You can request deletion at any time.</p>
-    <p><strong>Your rights.</strong> You can request access, correction, or deletion of your data by contacting us.</p>
-  </div>
-</div>
+          lastFocus = document.activeElement;
+          activeModal = modal;
 
-<div class="modal" id="termsModal" role="dialog" aria-modal="true" aria-labelledby="termsTitle" aria-hidden="true">
-  <div class="modal-card">
-    <button class="modal-close" type="button" aria-label="Close">×</button>
-    <h3 id="termsTitle">Terms of Service</h3>
-    <p><strong>Service.</strong> NameProof provides AI-assisted naming suggestions and basic availability/risk signals for informational purposes only.</p>
-    <p><strong>No legal advice.</strong> We are not a law firm and do not provide legal advice. Trademark clearance requires professional review.</p>
-    <p><strong>Delivery.</strong> We aim to deliver reports within the timeframe shown on the site; delays may occur due to volume or third-party services.</p>
-    <p><strong>Refunds.</strong> If we cannot deliver your report, contact us and we will make it right (including a refund when appropriate).</p>
-    <p><strong>Acceptable use.</strong> You agree not to use the service for unlawful purposes or to infringe others’ rights.</p>
-  </div>
-</div>
+          backdrop.classList.add('is-open');
+          modal.classList.add('is-open');
+          document.body.classList.add('modal-open');
 
-<div class="modal" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="contactTitle" aria-hidden="true">
-  <div class="modal-card">
-    <button class="modal-close" type="button" aria-label="Close">×</button>
-    <h3 id="contactTitle">Contact</h3>
-    <p>For support, questions, or data requests, email us at
-      <a class="footer-link" href="mailto:hello@nameproof.io">hello@nameproof.io</a>.
-    </p>
-    <p>If you have an order/payment issue, include your email used at checkout and (if available) your Stripe receipt reference.</p>
-  </div>
-</div>
+          backdrop.setAttribute('aria-hidden', 'false');
+          modal.setAttribute('aria-hidden', 'false');
 
+          const closeBtn = modal.querySelector('.modal-close');
+          if (closeBtn) closeBtn.focus();
+        }
+
+        function closeModal() {
+          if (!activeModal) return;
+
+          activeModal.classList.remove('is-open');
+          backdrop.classList.remove('is-open');
+          document.body.classList.remove('modal-open');
+
+          activeModal.setAttribute('aria-hidden', 'true');
+          backdrop.setAttribute('aria-hidden', 'true');
+
+          const toFocus = lastFocus;
+          activeModal = null;
+          lastFocus = null;
+          if (toFocus && typeof toFocus.focus === 'function') toFocus.focus();
+        }
+
+        document.addEventListener('click', function(e){
+          const opener = e.target.closest && e.target.closest('.js-open-modal');
+          if (opener) {
+            e.preventDefault();
+            const id = opener.getAttribute('data-modal');
+            if (id) openModal(id);
+            return;
+          }
+
+          const closeBtn = e.target.closest && e.target.closest('.modal-close');
+          if (closeBtn) {
+            e.preventDefault();
+            closeModal();
+            return;
+          }
+
+          if (e.target === backdrop) closeModal();
+        });
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') closeModal();
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
