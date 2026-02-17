@@ -968,26 +968,27 @@
       .preview-grid{ grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 520px){
-  .hero h1{ font-size: 30px; }
-  .solution-grid{ grid-template-columns: 1fr; }
-  .cards{ grid-template-columns: 1fr; }
-  .preview-grid{ grid-template-columns: 1fr; }
-  .nav a{ display:none; }
-  .nav .nav-cta{ 
-    display:inline-flex;
-    font-size: 12px;
-    padding: 8px 12px;
-  }
-.pricing-badge{ display: none; }
-
-}
       .hero h1{ font-size: 30px; }
       .solution-grid{ grid-template-columns: 1fr; }
       .cards{ grid-template-columns: 1fr; }
       .preview-grid{ grid-template-columns: 1fr; }
-      .nav a{ display:none; }
-      .nav .nav-cta{ display:inline-flex; }
 
+      /* Header: keep logo/name premium, put CTA on next line to avoid truncation */
+      .topbar-inner{ flex-wrap: wrap; gap: 10px; }
+      .brand{ flex: 1 1 auto; }
+      .nav{ flex: 1 1 100%; justify-content: flex-end; }
+
+      /* on mobile hide text links, keep CTA */
+      .nav a{ display:none; }
+      .nav .nav-cta{ 
+        display:inline-flex;
+        font-size: 12px;
+        padding: 8px 12px;
+        white-space: nowrap;
+      }
+
+      /* badge only hidden on mobile */
+      .pricing-badge{ display: none; }
     }
   </style>
 </head>
@@ -1024,8 +1025,8 @@
           <div>
             <h1>Validate your brand before you build it.</h1>
             <p class="sub">
-  One wrong name can cost thousands in rebranding. <strong>Validate it before you invest.</strong>
-</p>
+              One wrong name can cost thousands in rebranding. Validate it before you invest.
+            </p>
 
             <div class="hero-actions">
               <!-- KEEP STRIPE LINK EXACT -->
@@ -1207,12 +1208,12 @@
 
           <ul class="features-list">
             <li>30 professionally validated brand names</li>
-<li>Domain + social availability for all 30 names</li>
-<li>Global pronunciation analysis (8 languages)</li>
-<li>Trademark risk flags for each option</li>
-<li>Top 5 recommendations with detailed rationale</li>
-<li>Clear scoring and risk assessment</li>
-<li>Professional PDF report delivered same day</li>
+            <li>Domain + social availability for all 30 names</li>
+            <li>Global pronunciation analysis (8 languages)</li>
+            <li>Trademark risk flags for each option</li>
+            <li>Top 5 recommendations with detailed rationale</li>
+            <li>Clear scoring and risk assessment</li>
+            <li>Professional PDF report delivered same day</li>
           </ul>
 
           <!-- KEEP STRIPE LINK EXACT -->
@@ -1221,6 +1222,9 @@
           </a>
 
           <div class="spots-left">Built for founders launching in the next 30 days</div>
+
+
+          <div class="spots-left">⚡ Professional validation report delivered same day</div>
           <div class="guarantee">🔒 Secure payment via Stripe • Professional report delivered same day</div>
         </div>
       </div>
