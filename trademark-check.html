@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Startup Trademark Search & Risk Check | NameProof</title>
+  <meta name="description" content="Check your startup name for trademark risks (USPTO, EUIPO, WIPO). Avoid costly rebranding with our same-day professional risk assessment report." />
+  <meta name="keywords" content="startup trademark search, check if business name is trademarked, avoid trademark infringement startup, WIPO USPTO check, brand risk assessment" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://nameproof.io/trademark-check" />
+  <meta property="og:title" content="Startup Trademark Search & Risk Check" />
+  <meta property="og:description" content="Don't risk a forced rebrand. Get a professional trademark risk assessment across global databases today." />
+  <meta property="og:image" content="https://nameproof.io/nameproof-logo-new.png.png" />
+
+  <link rel="canonical" href="https://nameproof.io/trademark-check" />
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Startup Trademark Risk Assessment Report",
+    "description": "Professional trademark risk validation for founders. Check USPTO, EUIPO, and WIPO databases globally. Delivered same day.",
+    "image": "https://nameproof.io/nameproof-logo-new.png.png",
+    "brand": {
+      "@type": "Brand",
+      "name": "NameProof"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://nameproof.io/trademark-check",
+      "priceCurrency": "EUR",
+      "price": "19.00",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "NameProof"
+      }
+    }
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg: #ffffff; --ink: #0f172a; --muted: #475569; --muted2: #64748b;
+      --line: rgba(15, 23, 42, 0.10); --soft: #F7F7F8;
+      --red: #E11D2E; --red2: #B91C1C;
+      --shadow: 0 14px 36px rgba(2, 6, 23, 0.08); --shadow2: 0 18px 60px rgba(0,0,0,0.10);
+      --radius: 18px; --radius2: 14px;
+    }
+    *{ margin:0; padding:0; box-sizing:border-box; } html{ scroll-behavior:smooth; }
+    body{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.55; color: var(--ink); background: var(--bg); }
+    a{ color: inherit; }
+    .container{ max-width: 1120px; margin: 0 auto; padding: 0 22px; }
+
+    /* Top bar */
+    .topbar{ position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,0.86); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+    .topbar .container{ padding-left: 22px; padding-right: 22px; }
+    .topbar-inner{ display:flex; align-items:center; justify-content:space-between; padding: 16px 0; gap: 14px; }
+    .brand{ display:flex; align-items:center; gap: 12px; text-decoration:none; min-width: 0; }
+    .brand-mark{ width: 58px; height: 58px; border-radius: 18px; display:flex; align-items:center; justify-content:center; overflow:hidden; border: 1px solid rgba(15,23,42,0.08); background: #fff; box-shadow: 0 16px 40px rgba(2, 6, 23, 0.09); flex-shrink: 0; }
+    .brand-mark img{ width: 48px; height: 48px; object-fit: contain; display:block; }
+    .brand-name{ font-weight: 950; letter-spacing: -0.035em; font-size: 24px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .nav{ display:flex; align-items:center; gap: 14px; flex-wrap: wrap; justify-content:flex-end; }
+    .nav a{ text-decoration:none; color: rgba(15,23,42,0.70); font-weight: 850; font-size: 14px; padding: 8px 10px; border-radius: 999px; }
+    .nav a:hover{ background: rgba(15,23,42,0.04); }
+
+    /* Hero */
+    .hero{ padding: 58px 0 38px; background: radial-gradient(900px 420px at 18% 12%, rgba(225,29,46,0.08), rgba(225,29,46,0) 60%), radial-gradient(760px 360px at 88% 18%, rgba(15,23,42,0.06), rgba(15,23,42,0) 65%), var(--bg); }
+    .hero-grid{ display:grid; grid-template-columns: 1.05fr 0.95fr; gap: 28px; align-items:center; }
+    .hero h1{ font-size: 41px; line-height: 1.08; letter-spacing: -0.045em; font-weight: 950; margin-bottom: 14px; }
+    .hero .sub{ font-size: 17px; line-height: 1.65; color: rgba(15,23,42,0.72); max-width: 580px; }
+    .hero .sub strong{ color: rgba(15,23,42,0.92); }
+    .hero-actions{ margin-top: 22px; display:flex; gap: 12px; flex-wrap: wrap; align-items:center; }
+    .btn{ display:inline-flex; align-items:center; justify-content:center; gap: 10px; text-decoration:none; border-radius: 999px; font-weight: 950; letter-spacing: -0.01em; padding: 14px 18px; border: 1px solid transparent; transition: transform .15s ease, box-shadow .15s ease, background .15s ease; cursor:pointer; font-size: 15px; }
+    .btn.primary{ background: linear-gradient(135deg, var(--red), var(--red2)); color:#fff; box-shadow: 0 12px 30px rgba(225,29,46,0.18); }
+    .btn.primary:hover{ transform: translateY(-1px); box-shadow: 0 18px 46px rgba(185,28,28,0.22); }
+    .hero-meta{ margin-top: 12px; font-size: 13px; color: rgba(15,23,42,0.62); display:flex; flex-wrap:wrap; gap: 10px; align-items:center; }
+    .pill{ display:inline-flex; align-items:center; gap: 8px; padding: 8px 10px; border-radius: 999px; background: rgba(255,255,255,0.72); border: 1px solid rgba(15,23,42,0.08); font-weight: 850; color: rgba(15,23,42,0.70); box-shadow: 0 10px 26px rgba(2,6,23,0.05); }
+    .dot{ width:6px; height:6px; border-radius:999px; background: rgba(15,23,42,0.22); }
+
+    /* Preview card */
+    .preview{ border-radius: var(--radius); border: 1px solid rgba(15,23,42,0.10); background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.70)); box-shadow: 0 22px 70px rgba(2, 6, 23, 0.10); overflow:hidden; backdrop-filter: blur(10px); }
+    .preview-top{ padding: 14px 16px; display:flex; align-items:center; justify-content:space-between; border-bottom: 1px solid rgba(15,23,42,0.10); background: rgba(255,255,255,0.7); }
+    .preview-top .left{ display:flex; gap:10px; align-items:center; }
+    .mini-mark{ width: 28px; height: 28px; border-radius: 10px; background:#fff; border: 1px solid rgba(15,23,42,0.08); display:flex; align-items:center; justify-content:center; overflow:hidden; }
+    .mini-mark img{ width: 22px; height:22px; object-fit:contain; }
+    .preview-top .title{ font-weight: 950; letter-spacing:-0.02em; font-size: 13px; color: rgba(15,23,42,0.78); }
+    .preview-body{ padding: 16px; }
+    .mock-name{ font-size: 27px; font-weight: 600; letter-spacing: -0.015em; margin-bottom: 12px; color: rgba(15,23,42,0.82); }
+    .row{ display:flex; gap: 10px; flex-wrap:wrap; align-items:center; margin-bottom: 12px; color: rgba(15,23,42,0.72); font-weight: 850; font-size: 13px; }
+    .badge{ display:inline-flex; align-items:center; gap: 8px; padding: 8px 10px; border-radius: 999px; background:#fff; border: 1px solid rgba(15,23,42,0.10); }
+    .badge .k{ color: rgba(15,23,42,0.60); font-weight: 900; }
+    .badge .v{ color: rgba(15,23,42,0.88); font-weight: 950; }
+    .cards{ display:grid; grid-template-columns: 1fr; gap: 10px; } 
+    .card{ background:#fff; border: 1px solid rgba(15,23,42,0.10); border-radius: 14px; padding: 16px; }
+    .card h4{ font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: rgba(15,23,42,0.55); margin-bottom: 10px; font-weight: 950; }
+    .line-item{ display:flex; align-items:flex-start; gap: 10px; margin-bottom: 10px; color: rgba(15,23,42,0.80); font-weight: 850; font-size: 13px; }
+    .ok{ width: 18px; height: 18px; border-radius: 999px; display:inline-flex; align-items:center; justify-content:center; background: rgba(34,197,94,.12); color:#16a34a; font-size: 12px; font-weight: 950; flex-shrink:0; }
+    .warn{ width: 18px; height: 18px; border-radius: 999px; display:inline-flex; align-items:center; justify-content:center; background: rgba(225,29,46,.10); color: var(--red); font-size: 12px; font-weight: 950; flex-shrink:0; }
+
+    /* Sections & Problems */
+    .section{ padding: 62px 0; }
+    .section.soft{ background: var(--soft); border-top: 1px solid rgba(15,23,42,0.06); border-bottom: 1px solid rgba(15,23,42,0.06); }
+    .section-title{ font-size: 34px; font-weight: 950; letter-spacing:-0.03em; text-align:center; margin-bottom: 12px; }
+    .section-subtitle{ text-align:center; color: rgba(15,23,42,0.62); font-weight: 800; max-width: 760px; margin: 0 auto 30px; }
+    .problems{ max-width: 920px; margin: 0 auto; display:grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .problem{ background: #fff; border: 1px solid rgba(15,23,42,0.10); border-radius: var(--radius2); padding: 18px; box-shadow: 0 10px 24px rgba(2,6,23,0.05); }
+    .problem .x{ width: 36px; height: 36px; border-radius: 12px; display:flex; align-items:center; justify-content:center; background: rgba(225,29,46,0.10); color: var(--red); font-weight: 950; margin-bottom: 12px; }
+    .problem h3{ font-size: 16px; font-weight: 950; letter-spacing:-0.02em; margin-bottom: 6px; }
+    .problem p{ color: rgba(15,23,42,0.65); font-weight: 800; font-size: 14px; }
+
+    /* Pricing (Full CSS come Index) */
+    .pricing-section{ background: var(--soft); border-top: 1px solid rgba(15,23,42,0.06); border-bottom: 1px solid rgba(15,23,42,0.06); padding: 70px 0; }
+    .pricing-wrap{ max-width: 980px; margin: 0 auto; padding: 0 22px; }
+    .pricing-head h2{ font-size: 36px; font-weight: 950; letter-spacing:-0.03em; text-align:center; margin-bottom: 12px; }
+    .pricing-subtitle{ text-align:center; color: rgba(15,23,42,0.62); font-weight: 800; margin: 0 auto 30px; max-width: 760px; }
+    .pricing-card{ background: #fff; border: 1px solid rgba(15,23,42,0.12); border-radius: 22px; padding: 30px; box-shadow: var(--shadow2); max-width: 560px; margin: 0 auto; position: relative; overflow:hidden; }
+    .pricing-card:before{ content:""; position:absolute; inset: -120px -120px auto auto; width: 260px; height: 260px; background: radial-gradient(circle at center, rgba(225,29,46,0.16), rgba(225,29,46,0.0) 62%); transform: rotate(18deg); pointer-events:none; }
+    .pricing-badge{ position:absolute; top: 16px; right: 16px; background: rgba(225,29,46,0.10); color: var(--red); border: 1px solid rgba(225,29,46,0.20); padding: 8px 10px; border-radius: 999px; font-size: 12px; font-weight: 950; letter-spacing: .06em; text-transform: uppercase; }
+    .pricing-header{text-align:center; margin-bottom: 18px;}
+    .pricing-header h3{ font-size: 18px; font-weight: 950; letter-spacing:-0.02em; margin-bottom: 10px; }
+    .price{ display:flex; align-items: baseline; justify-content:center; gap: 10px; margin-bottom: 6px; }
+    .current-price{ font-size: 54px; font-weight: 950; letter-spacing:-0.03em; color: var(--ink); }
+    .price-note{ font-size: 14px; color: rgba(15,23,42,0.62); font-weight: 850; }
+    .features-list{ list-style:none; margin: 18px 0 0; }
+    .features-list li{ padding: 12px 0; border-bottom: 1px solid rgba(15,23,42,0.08); font-weight: 800; color: rgba(15,23,42,0.78); display:flex; gap: 10px; align-items:flex-start; font-size: 15px; }
+    .features-list li:last-child{ border-bottom:none; }
+    .features-list li:before{ content:"✓"; color: #16a34a; font-weight: 950; margin-top: 1px; }
+    .cta-button{ width:100%; margin-top: 18px; padding: 16px 18px; border-radius: 16px; text-align:center; text-decoration:none; background: linear-gradient(135deg, var(--red), var(--red2)); color:#fff; font-weight: 950; font-size: 16px; display:block; box-shadow: 0 14px 32px rgba(225,29,46,0.18); transition: transform .15s ease, box-shadow .15s ease; }
+    .cta-button:hover{ transform: translateY(-1px); box-shadow: 0 20px 48px rgba(185,28,28,0.22); }
+    .guarantee{ margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(15,23,42,0.08); color: rgba(15,23,42,0.60); font-weight: 850; font-size: 13px; text-align:center; }
+
+    /* Footer & Modals */
+    footer{ background: #0b1220; color: #fff; padding: 44px 20px; text-align:center; border-top: 1px solid rgba(255,255,255,0.10); }
+    .footer-content{ max-width: 980px; margin: 0 auto; }
+    .footer-copyright{ font-size: 14px; margin-bottom: 10px; opacity: 0.9; font-weight: 850; }
+    .footer-disclaimer{ font-size: 12px; color: rgba(226,232,240,0.82); line-height: 1.6; margin: 14px auto 18px; max-width: 860px; }
+    .footer-links{ font-size: 12px; color: rgba(226,232,240,0.85); font-weight: 850; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+    .footer-links a{ color: rgba(255,255,255,0.88); text-decoration:none; border-bottom: 1px solid rgba(255,255,255,0.18); padding-bottom: 1px; }
+    .footer-links a:hover{ border-bottom-color: rgba(255,255,255,0.55); }
+
+    .cookie-banner{ position: fixed; left: 0; right: 0; bottom: 0; z-index: 9999; padding: 14px 16px; background: rgba(11,18,32,.92); color: #e2e8f0; display: none; backdrop-filter: blur(10px); }
+    .cookie-inner{ max-width: 980px; margin: 0 auto; display:flex; gap: 12px; align-items:center; justify-content:space-between; flex-wrap:wrap; }
+    .cookie-text{ font-size: 13px; line-height: 1.45; max-width: 680px; font-weight: 800; }
+    .cookie-actions{ display:flex; gap: 10px; flex-wrap:wrap; }
+    .cookie-btn{ border:none; border-radius: 999px; padding: 10px 14px; font-weight: 950; font-size: 13px; cursor:pointer; }
+    .cookie-btn.secondary{ background: rgba(148,163,184,.18); color: #e2e8f0; }
+    .cookie-btn.primary{ background: linear-gradient(135deg, var(--red), var(--red2)); color:#fff; }
+
+    .modal-backdrop{ position: fixed; inset: 0; background: rgba(2, 6, 23, 0.62); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); opacity: 0; pointer-events: none; transition: opacity 180ms ease; z-index: 9998; }
+    .modal{ position: fixed; inset: 0; display:flex; align-items:center; justify-content:center; padding: 22px; opacity: 0; pointer-events: none; transition: opacity 180ms ease, transform 180ms ease; transform: translateY(8px); z-index: 9999; }
+    .modal-card{ width: min(820px, 100%); max-height: min(78vh, 720px); overflow:auto; background: rgba(11, 18, 32, 0.92); border: 1px solid rgba(255,255,255,0.14); border-radius: 18px; box-shadow: 0 18px 60px rgba(0,0,0,0.35); padding: 18px; text-align:left; position:relative; }
+    .modal-card h3{ margin: 6px 0 12px; font-size: 20px; font-weight: 950; color: rgba(255,255,255,0.95); }
+    .modal-card p{ margin: 0 0 12px; color: rgba(255,255,255,0.86); line-height: 1.55; font-size: 14px; font-weight: 650; }
+    .modal-close{ position:absolute; top: 10px; right: 10px; width: 36px; height: 36px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.14); background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.92); font-size: 22px; line-height: 1; cursor:pointer; }
+    body.modal-open{ overflow:hidden; }
+    .modal.is-open, .modal-backdrop.is-open{ opacity:1; pointer-events:auto; }
+    .modal.is-open{ transform: translateY(0); }
+
+    @media (max-width: 980px){ .hero-grid{ grid-template-columns: 1fr; } .hero h1{ font-size: 36px; } .problems{ grid-template-columns: 1fr; } }
+    @media (max-width: 520px){ .hero h1{ font-size: 30px; } .topbar-inner{ flex-wrap: wrap; gap: 10px; } .brand{ flex: 1 1 auto; } .nav{ flex: 1 1 100%; justify-content: flex-end; } .nav a{ display:inline-flex; font-size: 12px; padding: 8px 10px; } .pricing-badge{ display: none; } }
+    .brand-mark img{ width:44px; height:44px; } .brand-name{ font-size: 1.25rem; }
+    @media (min-width: 768px){ .brand-mark img{ width:52px; height:52px; } .brand-name{ font-size: 1.45rem; } }
+  </style>
+</head>
+
+<body>
+  <header class="topbar" aria-label="Site header">
+    <div class="container">
+      <div class="topbar-inner">
+        <a class="brand" href="/" aria-label="NameProof home">
+          <span class="brand-mark"><img src="./nameproof-logo-new.png.png" alt="NameProof logo"></span>
+          <span class="brand-name">NameProof</span>
+        </a>
+
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="/domain-availability-checker">Domains</a>
+          <a href="/trademark-check">Trademarks</a>
+          <a href="/free-startup-name-generator">Free Names</a>
+          <a href="#pricing">Pricing</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <h1>Check your startup name for trademark risks before you launch.</h1>
+            <p class="sub">
+              Don't risk cease-and-desist letters or a forced rebrand. Get a professional risk assessment across global databases <strong>(USPTO, EUIPO, WIPO)</strong> delivered today.
+            </p>
+
+            <div class="hero-actions">
+              <a href="https://buy.stripe.com/fZu6oJdnx97GgZ1aQVb3q02" class="btn primary" target="_blank" rel="noopener">
+                Get Risk Report €19
+              </a>
+            </div>
+            <div style="margin-top:14px; font-size:14px; color:rgba(15,23,42,0.55); font-weight:600;">
+              Used by founders before incorporating or buying domains
+            </div>
+            <div class="hero-meta">
+              <span class="pill"><span class="dot"></span> USPTO & EUIPO Search</span>
+              <span class="pill"><span class="dot"></span> Same-day delivery</span>
+            </div>
+          </div>
+
+          <aside class="preview" aria-label="Report preview">
+            <div class="preview-top">
+              <div class="left">
+                <span class="mini-mark"><img src="./nameproof-logo-new.png.png" alt="NameProof"></span>
+                <span class="title">Trademark Assessment Preview</span>
+              </div>
+              <span class="title">NP • Same-day</span>
+            </div>
+            <div class="preview-body">
+              <div class="mock-name">Nexustri</div>
+              <div class="row">
+                <span class="badge"><span class="k">Overall Risk</span> <span class="v">Low–Medium</span></span>
+              </div>
+              <div class="cards">
+                <div class="card">
+                  <h4>Global Databases Checked</h4>
+                  <div class="line-item"><span class="ok">✓</span> USPTO (USA): No matches in Class 9/42.</div>
+                  <div class="line-item"><span class="warn">!</span> EUIPO (Europe): "Nexus Tree" registered. Low risk of confusion, but requires attention.</div>
+                  <div class="line-item"><span class="ok">✓</span> WIPO (Global): Clear.</div>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft">
+      <div class="container">
+        <h2 class="section-title">Why DIY trademark search is dangerous</h2>
+        <p class="section-subtitle">
+          Searching government databases on your own often gives a false sense of security. Here is why founders choose NameProof before investing.
+        </p>
+
+        <div class="problems">
+          <div class="problem">
+            <div class="x">✕</div>
+            <h3>"Exact Match" isn't enough</h3>
+            <p>If you search for "Nexustri", the database might say it's free. But if "Nexus Tree" is trademarked in your industry, you can still get sued.</p>
+          </div>
+          <div class="problem">
+            <div class="x">✕</div>
+            <h3>Government UI is a nightmare</h3>
+            <p>USPTO and EUIPO databases are built for lawyers, not founders. Missing a specific "Class" of goods can invalidate your entire search.</p>
+          </div>
+          <div class="problem">
+            <div class="x">✕</div>
+            <h3>Finding out too late</h3>
+            <p>Discovering a trademark conflict after you paid for the .com domain, the LLC, and the branding agency is a financial disaster.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Common questions about startup trademark validation</p>
+        
+        <div class="problems" style="grid-template-columns: 1fr 1fr;">
+          <div class="problem" style="text-align: left;">
+            <h3>Does a free domain mean the trademark is free?</h3>
+            <p>No. Domain names (like .com or .io) are completely separate from legal trademarks. You can easily buy an available domain name and immediately infringe on a registered trademark.</p>
+          </div>
+          <div class="problem" style="text-align: left;">
+            <h3>Is this report legal advice?</h3>
+            <p>No. NameProof provides a professional, AI-assisted risk assessment to help founders filter out bad names early. Before filing an official trademark, you should always consult an IP attorney.</p>
+          </div>
+          <div class="problem" style="text-align: left;">
+            <h3>Which databases do you check?</h3>
+            <p>We check signals against the major global databases including USPTO (United States), EUIPO (European Union), and WIPO (Global intellectual property).</p>
+          </div>
+          <div class="problem" style="text-align: left;">
+            <h3>What if my chosen name is high risk?</h3>
+            <p>If our assessment flags a high probability of trademark conflict, our report will also include 3-5 AI-generated alternative names that maintain your brand vibe but are safer to use.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing-section" id="pricing">
+      <div class="pricing-wrap">
+        <div class="pricing-head">
+          <h2>Get Your Risk Report Today</h2>
+          <p class="pricing-subtitle">One-time payment — professional validation delivered same day</p>
+        </div>
+
+        <div class="pricing-card">
+          <div class="pricing-badge">Same-day</div>
+          <div class="pricing-header">
+            <h3>Professional Brand Validation Report</h3>
+            <div class="price"><span class="current-price">€19</span></div>
+            <div class="price-note">One-time payment • Same-day delivery</div>
+          </div>
+
+          <ul class="features-list">
+            <li>Trademark risk flags (USPTO, EUIPO, WIPO)</li>
+            <li>Domain + social availability check</li>
+            <li>Global pronunciation analysis</li>
+            <li>Clear scoring and risk assessment</li>
+            <li>Professional PDF report delivered same day</li>
+          </ul>
+
+          <a href="https://buy.stripe.com/fZu6oJdnx97GgZ1aQVb3q02" class="cta-button" target="_blank" rel="noopener">
+            Get your report €19
+          </a>
+          <div class="guarantee">🔒 Secure payment via Stripe • Professional report delivered same day</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-copyright" style="margin-bottom:8px;">
+        Built by <strong>Nexustri</strong> — AI Product Studio
+      </div>
+      <div class="footer-copyright">© 2026 NameProof. All rights reserved.</div>
+
+      <div class="footer-disclaimer">
+        NameProof provides professional brand validation for informational purposes only. This does not constitute legal advice or a formal trademark guarantee. We recommend consulting an intellectual property lawyer for final trademark clearance.
+      </div>
+
+      <div class="footer-links">
+        <a href="https://x.com/nameproof_io" target="_blank" rel="noopener">𝕏 Twitter</a>
+        <span aria-hidden="true">•</span>
+        <a href="https://linkedin.com/company/nameproof" target="_blank" rel="noopener">LinkedIn</a>
+        <span aria-hidden="true">•</span>
+        <a href="/domain-availability-checker">Domain Checker</a>
+        <span aria-hidden="true">•</span>
+        <a href="/trademark-check">Trademark Search</a>
+        <span aria-hidden="true">•</span>
+        <a href="/free-startup-name-generator">Free Name Generator</a>
+        <span aria-hidden="true">•</span>
+        <a href="#" class="footer-link js-open-modal" data-modal="privacyModal">Privacy Policy</a>
+        <span aria-hidden="true">•</span>
+        <a href="#" class="footer-link js-open-modal" data-modal="termsModal">Terms of Service</a>
+        <span aria-hidden="true">•</span>
+        <a href="#" class="footer-link js-open-modal" data-modal="contactModal">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cookie-banner" id="cookieBanner" aria-live="polite">
+    <div class="cookie-inner">
+      <div class="cookie-text">
+        We use essential cookies to make this site work. With your permission, we may also use analytics cookies to improve the experience.
+      </div>
+      <div class="cookie-actions">
+        <button class="cookie-btn secondary" id="cookieEssential">Essential only</button>
+        <button class="cookie-btn primary" id="cookieAccept">Accept analytics</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true"></div>
+
+  <div class="modal" id="privacyModal" role="dialog" aria-modal="true" aria-labelledby="privacyTitle" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close" type="button" aria-label="Close">×</button>
+      <h3 id="privacyTitle">Privacy Policy</h3>
+      <p><strong>What we collect.</strong> When you submit the form, we collect the information you provide (e.g., business idea / brand name, market, style preferences) and your email address so we can deliver your report.</p>
+      <p><strong>How we use it.</strong> We use your data only to generate and send the NameProof report and to provide customer support. We do not sell your personal data.</p>
+      <p><strong>Processors.</strong> Payments are handled by Stripe. Form submissions are processed via our automation provider (Make.com) to deliver reports.</p>
+    </div>
+  </div>
+
+  <div class="modal" id="termsModal" role="dialog" aria-modal="true" aria-labelledby="termsTitle" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close" type="button" aria-label="Close">×</button>
+      <h3 id="termsTitle">Terms of Service</h3>
+      <p><strong>Service.</strong> NameProof provides AI-assisted naming suggestions and basic availability/risk signals for informational purposes only.</p>
+      <p><strong>No legal advice.</strong> We are not a law firm and do not provide legal advice. Trademark clearance requires professional review.</p>
+      <p><strong>Delivery.</strong> We aim to deliver reports within the timeframe shown on the site; delays may occur due to volume or third-party services.</p>
+    </div>
+  </div>
+
+  <div class="modal" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="contactTitle" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close" type="button" aria-label="Close">×</button>
+      <h3 id="contactTitle">Contact</h3>
+      <p>For support, questions, or data requests, email us at
+        <a class="footer-link" href="mailto:hello@nameproof.io" style="color: #60a5fa;">hello@nameproof.io</a>.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href');
+        if (!id || id === '#') return;
+        const target = document.querySelector(id);
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.replaceState(null, '', id);
+      });
+    });
+
+    const ENABLE_COOKIE_BANNER = true;
+    const banner = document.getElementById('cookieBanner');
+    const btnEssential = document.getElementById('cookieEssential');
+    const btnAccept = document.getElementById('cookieAccept');
+
+    function setConsent(value){
+      localStorage.setItem('np_cookie_consent', value);
+      if (banner) banner.style.display = 'none';
+    }
+    function maybeShowBanner(){
+      if (!ENABLE_COOKIE_BANNER) return;
+      const consent = localStorage.getItem('np_cookie_consent');
+      if (!consent && banner) banner.style.display = 'block';
+    }
+    if (btnEssential) btnEssential.addEventListener('click', () => setConsent('essential'));
+    if (btnAccept) btnAccept.addEventListener('click', () => setConsent('all'));
+    maybeShowBanner();
+
+    (function () {
+      function ready(fn){
+        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fn);
+        else fn();
+      }
+
+      ready(function(){
+        const backdrop = document.getElementById('modalBackdrop');
+        if (!backdrop) return;
+        let activeModal = null; let lastFocus = null;
+
+        function openModal(modalId) {
+          const modal = document.getElementById(modalId);
+          if (!modal) return;
+          lastFocus = document.activeElement; activeModal = modal;
+          backdrop.classList.add('is-open'); modal.classList.add('is-open'); document.body.classList.add('modal-open');
+          backdrop.setAttribute('aria-hidden', 'false'); modal.setAttribute('aria-hidden', 'false');
+          const closeBtn = modal.querySelector('.modal-close'); if (closeBtn) closeBtn.focus();
+        }
+
+        function closeModal() {
+          if (!activeModal) return;
+          activeModal.classList.remove('is-open'); backdrop.classList.remove('is-open'); document.body.classList.remove('modal-open');
+          activeModal.setAttribute('aria-hidden', 'true'); backdrop.setAttribute('aria-hidden', 'true');
+          const toFocus = lastFocus; activeModal = null; lastFocus = null;
+          if (toFocus && typeof toFocus.focus === 'function') toFocus.focus();
+        }
+
+        document.addEventListener('click', function(e){
+          const opener = e.target.closest && e.target.closest('.js-open-modal');
+          if (opener) { e.preventDefault(); const id = opener.getAttribute('data-modal'); if (id) openModal(id); return; }
+          const closeBtn = e.target.closest && e.target.closest('.modal-close');
+          if (closeBtn) { e.preventDefault(); closeModal(); return; }
+          if (e.target === backdrop) closeModal();
+        });
+
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+      });
+    })();
+  </script>
+</body>
+</html>
