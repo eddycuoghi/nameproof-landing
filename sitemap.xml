@@ -2,20 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://nameproof.io/</loc>
-    <lastmod>2026-02-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>1.00</priority>
   </url>
   <url>
-    <loc>https://nameproof.io/#pricing</loc>
-    <lastmod>2026-02-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://nameproof.io/free-startup-name-generator</loc>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://nameproof.io/#free-names</loc>
-    <lastmod>2026-02-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://nameproof.io/trademark-check</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://nameproof.io/domain-availability-checker</loc>
+    <priority>0.80</priority>
   </url>
 </urlset>
