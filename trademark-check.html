@@ -169,6 +169,15 @@
     .brand-mark img{ width:44px; height:44px; } .brand-name{ font-size: 1.25rem; }
     @media (min-width: 768px){ .brand-mark img{ width:52px; height:52px; } .brand-name{ font-size: 1.45rem; } }
   </style>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D1XLG7DS3V"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-D1XLG7DS3V');
+  </script>
 </head>
 
 <body>
@@ -201,7 +210,7 @@
             </p>
 
             <div class="hero-actions">
-              <a href="https://buy.stripe.com/fZu6oJdnx97GgZ1aQVb3q02" class="btn primary" target="_blank" rel="noopener">
+              <a href="https://buy.stripe.com/fZu6oJdnx97GgZ1aQVb3q02" class="btn primary" target="_blank" rel="noopener" onclick="gtag('event', 'checkout_click', {'event_category': 'ecommerce', 'event_label': 'Stripe_Button_Hero_TM'});">
                 Get Risk Report €19
               </a>
             </div>
@@ -317,7 +326,7 @@
             <li>Professional PDF report delivered same day</li>
           </ul>
 
-          <a href="https://buy.stripe.com/fZu6oJdnx97GgZ1aQVb3q02" class="cta-button" target="_blank" rel="noopener">
+          <a href="https://buy.stripe.com/fZu6oJdnx97GgZ1aQVb3q02" class="cta-button" target="_blank" rel="noopener" onclick="gtag('event', 'checkout_click', {'event_category': 'ecommerce', 'event_label': 'Stripe_Button_Pricing_TM'});">
             Get your report €19
           </a>
           <div class="guarantee">🔒 Secure payment via Stripe • Professional report delivered same day</div>
