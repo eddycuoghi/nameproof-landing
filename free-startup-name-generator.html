@@ -14,6 +14,20 @@
   <link rel="icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "SoftwareApplication",
+    "name": "NameProof Free AI Startup Name Generator",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0.00",
+      "priceCurrency": "EUR"
+    }
+  }
+  </script>
   <style>
     :root{
       --bg: #ffffff;
@@ -129,7 +143,7 @@
 
     .submit-btn{width:100%;padding:14px;background:linear-gradient(135deg,var(--red),var(--red2));color:#fff;border:none;border-radius:16px;font-size:16px;font-weight:950;cursor:pointer;box-shadow:0 14px 30px rgba(225,29,46,0.16); transition: transform .15s ease, box-shadow .15s ease;}
     .submit-btn:hover{transform: translateY(-1px); box-shadow: 0 18px 40px rgba(185,28,28,0.18);}
-    .form-success{display:none;background:rgba(34,197,94,.12);color:#166534;padding:14px;border-radius:14px;margin-top:14px;text-align:center;font-weight:950; border: 1px solid rgba(34,197,94,.24);}
+    .form-success{display:none;background:rgba(34,197,94,.12);color:#166534;padding:18px;border-radius:14px;margin-top:14px;text-align:center;font-weight:950; border: 1px solid rgba(34,197,94,.24);}
     .form-error{display:none;background:rgba(239,68,68,.10);color:#991b1b;padding:14px;border-radius:14px;margin-top:14px;text-align:center;font-weight:950; border: 1px solid rgba(239,68,68,.22);}
     
     .section{padding:60px 0;background:var(--soft);} .section-title{text-align:center;font-size:30px;font-weight:950;margin-bottom:30px;}
@@ -155,9 +169,7 @@
     .modal.is-open, .modal-backdrop.is-open{ opacity:1; pointer-events:auto; }
     .modal.is-open{ transform: translateY(0); }
 
-    /* ========================================= */
     /* UNIFIED MEDIA QUERIES PER TUTTE LE PAGINE */
-    /* ========================================= */
     @media(max-width:980px){
       .hero h1{font-size:36px;}
     }
@@ -199,7 +211,7 @@
     <div class="container">
       <div class="topbar-inner">
         <a class="brand" href="/">
-          <span class="brand-mark"><img src="./nameproof-logo-new.png.png" alt="NameProof"></span>
+          <span class="brand-mark"><img src="./nameproof-logo-new.png" alt="NameProof"></span>
           <span class="brand-name">NameProof</span>
         </a>
         <nav class="nav">
@@ -303,7 +315,15 @@
 
             <button type="submit" class="submit-btn" id="submitBtn">Get my 3 free names</button>
 
-            <div class="form-success" id="successMessage">✓ Sent! Check your email soon.</div>
+            <div class="form-success" id="successMessage" style="text-align:left;">
+              <div style="font-size:16px; margin-bottom:8px;">✓ <strong>Sent!</strong> You'll receive your 3 names today.</div>
+              <div style="font-size:14px; font-weight:700; color:#166534; line-height:1.5;">
+                Already have a name in mind? Skip the line and get a deep-dive global trademark and domain validation report right now.
+              </div>
+              <a href="https://buy.stripe.com/fZu6oJdnx97GgZ1aQVb3q02" target="_blank" rel="noopener" onclick="gtag('event', 'checkout_click', {'event_category': 'ecommerce', 'event_label': 'Stripe_Button_Upsell_FreeNames'});" style="display:inline-block; margin-top:12px; background:linear-gradient(135deg, #E11D2E, #B91C1C); color:#fff; padding:10px 16px; border-radius:12px; text-decoration:none; font-weight:950; font-size:14px; box-shadow: 0 4px 14px rgba(225,29,46,0.2);">
+                Get your Validation Report €19
+              </a>
+            </div>
             <div class="form-error" id="errorMessage"></div>
           </form>
         </div>
@@ -358,6 +378,18 @@
       </div>
     </div>
   </footer>
+
+  <div class="cookie-banner" id="cookieBanner" aria-live="polite">
+    <div class="cookie-inner">
+      <div class="cookie-text">
+        We use essential cookies to make this site work. With your permission, we may also use analytics cookies to improve the experience.
+      </div>
+      <div class="cookie-actions">
+        <button class="cookie-btn secondary" id="cookieEssential">Essential only</button>
+        <button class="cookie-btn primary" id="cookieAccept">Accept analytics</button>
+      </div>
+    </div>
+  </div>
 
   <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true"></div>
 
