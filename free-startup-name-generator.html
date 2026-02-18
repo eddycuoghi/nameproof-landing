@@ -15,29 +15,110 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 
   <style>
-    :root{--bg:#ffffff;--ink:#0f172a;--soft:#F7F7F8;--red:#E11D2E;--red2:#B91C1C;--line:rgba(15,23,42,0.10);}
-    *{margin:0;padding:0;box-sizing:border-box;} html{scroll-behavior:smooth;} body{font-family:-apple-system,BlinkMacSystemFont,sans-serif;line-height:1.55;color:var(--ink);background:var(--bg);} a{color:inherit;text-decoration:none;}
-    .container{max-width:1120px;margin:0 auto;padding:0 22px;}
-    .topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
-    .topbar-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 0;}
-    .brand{display:flex;align-items:center;gap:12px;} .brand-mark{width:44px;height:44px;border-radius:14px;border:1px solid rgba(15,23,42,0.08);background:#fff;display:flex;align-items:center;justify-content:center;} .brand-mark img{width:32px;} .brand-name{font-weight:950;font-size:20px;}
-    @media(min-width:768px){.brand-mark{width:58px;height:58px;border-radius:18px;} .brand-mark img{width:48px;} .brand-name{font-size:24px;}}
-    .nav{display:flex;gap:14px;} .nav a{color:rgba(15,23,42,0.70);font-weight:850;font-size:14px;padding:8px 10px;}
-    
+    :root{
+      --bg: #ffffff;
+      --ink: #0f172a;
+      --muted: #475569;
+      --line: rgba(15, 23, 42, 0.10);
+      --soft: #F7F7F8;
+      --red: #E11D2E;
+      --red2: #B91C1C;
+      --shadow: 0 14px 36px rgba(2, 6, 23, 0.08);
+      --shadow2: 0 18px 60px rgba(0,0,0,0.10);
+      --radius: 18px;
+    }
+
+    *{ margin:0; padding:0; box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.55;
+      color: var(--ink);
+      background: var(--bg);
+    }
+    a{ color: inherit; text-decoration:none; }
+    .container{ max-width: 1120px; margin: 0 auto; padding: 0 22px; }
+
+    /* Top bar (ALLINEATA ALLA HOME) */
+    .topbar{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,255,255,0.86);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding: 16px 0;
+      gap: 14px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap: 12px;
+      text-decoration:none;
+      min-width: 0;
+    }
+    .brand-mark{
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+      border: 1px solid rgba(15,23,42,0.08);
+      background: #fff;
+      box-shadow: 0 16px 40px rgba(2, 6, 23, 0.09);
+      flex-shrink: 0;
+    }
+    .brand-mark img{
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+      display:block;
+    }
+    .brand-name{
+      font-weight: 950;
+      letter-spacing: -0.035em;
+      font-size: 28px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content:flex-end;
+    }
+    .nav a{
+      color: rgba(15,23,42,0.70);
+      font-weight: 850;
+      font-size: 14px;
+      padding: 8px 10px;
+      border-radius: 999px;
+    }
+    .nav a:hover{ background: rgba(15,23,42,0.04); }
+
+    /* Struttura Hero specifica per il Generator */
     .hero{padding:60px 0 40px;text-align:center;}
     .hero h1{font-size:42px;font-weight:950;letter-spacing:-0.04em;margin-bottom:16px;}
     .hero p{font-size:18px;color:rgba(15,23,42,0.7);max-width:600px;margin:0 auto 30px;}
     
-    /* FORM CSS COMPLETO */
+    /* Form CSS */
     .form-container{max-width:600px;margin:0 auto;background:#fff;border-radius:22px;border:1px solid rgba(15,23,42,0.12);padding:30px;box-shadow:0 18px 60px rgba(2,6,23,0.08);text-align:left;}
     .form-group{margin-bottom:16px;} .form-group label{display:block;font-size:13px;font-weight:950;margin-bottom:8px;}
     .form-group input, .form-group select, .form-group textarea{width:100%;padding:12px 14px;border:1px solid rgba(15,23,42,0.14);border-radius:14px;font-size:15px;background:#fff;transition: border-color .2s ease, box-shadow .2s ease;}
     .form-group input:focus, .form-group select:focus, .form-group textarea:focus{outline:none;border-color:rgba(225,29,46,0.40);box-shadow:0 0 0 4px rgba(225,29,46,0.10);}
     .form-group textarea{min-height:90px; resize:vertical;}
     .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-    @media(max-width:520px){.form-row{grid-template-columns:1fr;}}
     
-    /* Stili per i radio button aggiunti */
     .radio-group{ display:flex; gap: 12px; flex-wrap:wrap; margin-top: 8px; }
     .radio{ display:flex; align-items:center; gap: 8px; font-size: 14px; color: var(--ink); background: #fff; border: 1px solid rgba(15,23,42,0.12); padding: 10px 12px; border-radius: 999px; font-weight: 850; }
     .radio input{ accent-color: var(--red); }
@@ -51,13 +132,40 @@
     .section{padding:60px 0;background:var(--soft);} .section-title{text-align:center;font-size:30px;font-weight:950;margin-bottom:30px;}
     .faq-grid{max-width:800px;margin:0 auto;display:grid;gap:20px;grid-template-columns:1fr 1fr;}
     .faq-item{background:#fff;padding:20px;border-radius:16px;border:1px solid rgba(15,23,42,0.1);} .faq-item h4{margin-bottom:8px;font-weight:950;} .faq-item p{font-size:14px;color:rgba(15,23,42,0.7);}
+
+    /* Footer & Modals (ALLINEATI ALLA HOME) */
+    footer{ background: #0b1220; color: #fff; padding: 44px 20px; text-align:center; border-top: 1px solid rgba(255,255,255,0.10); }
+    .footer-content{ max-width: 980px; margin: 0 auto; }
+    .footer-copyright{ font-size: 14px; margin-bottom: 10px; opacity: 0.9; font-weight: 850; }
+    .footer-disclaimer{ font-size: 12px; color: rgba(226,232,240,0.82); line-height: 1.6; margin: 14px auto 18px; max-width: 860px; }
+    .footer-links{ font-size: 12px; color: rgba(226,232,240,0.85); font-weight: 850; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+    .footer-links a{ color: rgba(255,255,255,0.88); text-decoration:none; border-bottom: 1px solid rgba(255,255,255,0.18); padding-bottom: 1px; }
+    .footer-links a:hover{ border-bottom-color: rgba(255,255,255,0.55); }
+
+    .modal-backdrop{ position: fixed; inset: 0; background: rgba(2, 6, 23, 0.62); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); opacity: 0; pointer-events: none; transition: opacity 180ms ease; z-index: 9998; }
+    .modal{ position: fixed; inset: 0; display:flex; align-items:center; justify-content:center; padding: 22px; opacity: 0; pointer-events: none; transition: opacity 180ms ease, transform 180ms ease; transform: translateY(8px); z-index: 9999; }
+    .modal-card{ width: min(820px, 100%); max-height: min(78vh, 720px); overflow:auto; background: rgba(11, 18, 32, 0.92); border: 1px solid rgba(255,255,255,0.14); border-radius: 18px; box-shadow: 0 18px 60px rgba(0,0,0,0.35); padding: 18px; text-align:left; position:relative; }
+    .modal-card h3{ margin: 6px 0 12px; font-size: 20px; font-weight: 950; color: rgba(255,255,255,0.95); }
+    .modal-card p{ margin: 0 0 12px; color: rgba(255,255,255,0.86); line-height: 1.55; font-size: 14px; font-weight: 650; }
+    .modal-close{ position:absolute; top: 10px; right: 10px; width: 36px; height: 36px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.14); background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.92); font-size: 22px; line-height: 1; cursor:pointer; }
+    body.modal-open{ overflow:hidden; }
+    .modal.is-open, .modal-backdrop.is-open{ opacity:1; pointer-events:auto; }
+    .modal.is-open{ transform: translateY(0); }
+
+    /* Responsive */
     @media(max-width:768px){.faq-grid{grid-template-columns:1fr;}}
-    footer{background:#0b1220;color:#fff;padding:40px 20px;text-align:center;} .footer-links a{color:rgba(255,255,255,0.8);margin:0 10px;font-size:13px;}
+    @media(max-width:520px){
+      .form-row{grid-template-columns:1fr;}
+      .topbar-inner{ flex-wrap: wrap; gap: 10px; }
+      .brand{ flex: 1 1 auto; }
+      .nav{ flex: 1 1 100%; justify-content: flex-end; }
+      .nav a{ display:inline-flex; font-size: 12px; padding: 8px 10px; }
+    }
   </style>
 </head>
 <body>
 
-  <header class="topbar">
+  <header class="topbar" aria-label="Site header">
     <div class="container">
       <div class="topbar-inner">
         <a class="brand" href="/">
@@ -67,6 +175,7 @@
         <nav class="nav">
           <a href="/domain-availability-checker">Domains</a>
           <a href="/trademark-check">Trademarks</a>
+          <a href="/free-startup-name-generator">Free Names</a>
           <a href="/#pricing">Pricing</a>
         </nav>
       </div>
@@ -189,13 +298,73 @@
   </main>
 
   <footer>
-    <div class="footer-links">
-      <a href="/">Home</a>
-      <a href="/domain-availability-checker">Domain Check</a>
-      <a href="/trademark-check">Trademark Search</a>
+    <div class="footer-content">
+      <div class="footer-copyright" style="margin-bottom:8px;">
+        Built by <strong>Nexustri</strong> — AI Product Studio
+      </div>
+      <div class="footer-copyright">© 2026 NameProof. All rights reserved.</div>
+
+      <div class="footer-disclaimer">
+        NameProof provides professional brand validation for informational purposes only. This does not constitute legal advice or a formal trademark guarantee.
+        We recommend consulting an intellectual property lawyer for final trademark clearance before significant brand investment.
+      </div>
+
+      <div class="footer-links">
+        <a href="https://x.com/nameproof_io" target="_blank" rel="noopener">𝕏 Twitter</a>
+        <span aria-hidden="true">•</span>
+        <a href="https://linkedin.com/company/nameproof" target="_blank" rel="noopener">LinkedIn</a>
+        <span aria-hidden="true">•</span>
+        <a href="/domain-availability-checker">Domain Checker</a>
+        <span aria-hidden="true">•</span>
+        <a href="/trademark-check">Trademark Search</a>
+        <span aria-hidden="true">•</span>
+        <a href="/free-startup-name-generator">Free Name Generator</a>
+        <span aria-hidden="true">•</span>
+        <a href="#" class="footer-link js-open-modal" data-modal="privacyModal">Privacy Policy</a>
+        <span aria-hidden="true">•</span>
+        <a href="#" class="footer-link js-open-modal" data-modal="termsModal">Terms of Service</a>
+        <span aria-hidden="true">•</span>
+        <a href="#" class="footer-link js-open-modal" data-modal="contactModal">Contact</a>
+      </div>
     </div>
-    <div style="font-size:12px; color:rgba(255,255,255,0.5); margin-top:20px;">© 2026 NameProof.</div>
   </footer>
+
+  <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true"></div>
+
+  <div class="modal" id="privacyModal" role="dialog" aria-modal="true" aria-labelledby="privacyTitle" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close" type="button" aria-label="Close">×</button>
+      <h3 id="privacyTitle">Privacy Policy</h3>
+      <p><strong>What we collect.</strong> When you submit the form, we collect the information you provide (e.g., business idea / brand name, market, style preferences) and your email address so we can deliver your report.</p>
+      <p><strong>How we use it.</strong> We use your data only to generate and send the NameProof report and to provide customer support. We do not sell your personal data.</p>
+      <p><strong>Processors.</strong> Payments are handled by Stripe. Form submissions are processed via our automation provider (Make.com) to deliver reports.</p>
+      <p><strong>Retention.</strong> We keep submissions for a limited period to provide the service and handle support. You can request deletion at any time.</p>
+      <p><strong>Your rights.</strong> You can request access, correction, or deletion of your data by contacting us.</p>
+    </div>
+  </div>
+
+  <div class="modal" id="termsModal" role="dialog" aria-modal="true" aria-labelledby="termsTitle" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close" type="button" aria-label="Close">×</button>
+      <h3 id="termsTitle">Terms of Service</h3>
+      <p><strong>Service.</strong> NameProof provides AI-assisted naming suggestions and basic availability/risk signals for informational purposes only.</p>
+      <p><strong>No legal advice.</strong> We are not a law firm and do not provide legal advice. Trademark clearance requires professional review.</p>
+      <p><strong>Delivery.</strong> We aim to deliver reports within the timeframe shown on the site; delays may occur due to volume or third-party services.</p>
+      <p><strong>Refunds.</strong> If we cannot deliver your report, contact us and we will make it right (including a refund when appropriate).</p>
+      <p><strong>Acceptable use.</strong> You agree not to use the service for unlawful purposes or to infringe others' rights.</p>
+    </div>
+  </div>
+
+  <div class="modal" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="contactTitle" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close" type="button" aria-label="Close">×</button>
+      <h3 id="contactTitle">Contact</h3>
+      <p>For support, questions, or data requests, email us at
+        <a class="footer-link" href="mailto:hello@nameproof.io" style="color: #60a5fa;">hello@nameproof.io</a>.
+      </p>
+      <p>If you have an order/payment issue, include your email used at checkout and (if available) your Stripe receipt reference.</p>
+    </div>
+  </div>
 
   <script>
     // IL TUO WEBHOOK ORIGINALE MAKE.COM
@@ -209,7 +378,7 @@
     const businessIdea = document.getElementById('businessIdea');
     const brandName = document.getElementById('brandName');
 
-    // Funzione per mostrare/nascondere i campi (Ideale vs Nome già esistente)
+    // Funzione per mostrare/nascondere i campi
     function syncConditionalFields() {
       const hasName = document.querySelector('input[name="hasName"]:checked')?.value || 'no';
       if (hasName === 'yes') {
@@ -274,6 +443,47 @@
     }
 
     form.addEventListener('submit', handleSubmit);
+
+    // GESTIONE DEI POPUP LEGALI (Identica alla home)
+    (function () {
+      function ready(fn){
+        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fn);
+        else fn();
+      }
+
+      ready(function(){
+        const backdrop = document.getElementById('modalBackdrop');
+        if (!backdrop) return;
+        let activeModal = null; let lastFocus = null;
+
+        function openModal(modalId) {
+          const modal = document.getElementById(modalId);
+          if (!modal) return;
+          lastFocus = document.activeElement; activeModal = modal;
+          backdrop.classList.add('is-open'); modal.classList.add('is-open'); document.body.classList.add('modal-open');
+          backdrop.setAttribute('aria-hidden', 'false'); modal.setAttribute('aria-hidden', 'false');
+          const closeBtn = modal.querySelector('.modal-close'); if (closeBtn) closeBtn.focus();
+        }
+
+        function closeModal() {
+          if (!activeModal) return;
+          activeModal.classList.remove('is-open'); backdrop.classList.remove('is-open'); document.body.classList.remove('modal-open');
+          activeModal.setAttribute('aria-hidden', 'true'); backdrop.setAttribute('aria-hidden', 'true');
+          const toFocus = lastFocus; activeModal = null; lastFocus = null;
+          if (toFocus && typeof toFocus.focus === 'function') toFocus.focus();
+        }
+
+        document.addEventListener('click', function(e){
+          const opener = e.target.closest && e.target.closest('.js-open-modal');
+          if (opener) { e.preventDefault(); const id = opener.getAttribute('data-modal'); if (id) openModal(id); return; }
+          const closeBtn = e.target.closest && e.target.closest('.modal-close');
+          if (closeBtn) { e.preventDefault(); closeModal(); return; }
+          if (e.target === backdrop) closeModal();
+        });
+
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+      });
+    })();
   </script>
 </body>
 </html>
