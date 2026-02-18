@@ -39,7 +39,7 @@
     a{ color: inherit; text-decoration:none; }
     .container{ max-width: 1120px; margin: 0 auto; padding: 0 22px; }
 
-    /* Top bar (ALLINEATA ALLA HOME) */
+    /* Top bar */
     .topbar{
       position: sticky;
       top: 0;
@@ -63,6 +63,8 @@
       text-decoration:none;
       min-width: 0;
     }
+    
+    /* LOGO BASE (Desktop) */
     .brand-mark{
       width: 58px;
       height: 58px;
@@ -90,6 +92,7 @@
       overflow: hidden;
       text-overflow: ellipsis;
     }
+    
     .nav{
       display:flex;
       align-items:center;
@@ -133,7 +136,7 @@
     .faq-grid{max-width:800px;margin:0 auto;display:grid;gap:20px;grid-template-columns:1fr 1fr;}
     .faq-item{background:#fff;padding:20px;border-radius:16px;border:1px solid rgba(15,23,42,0.1);} .faq-item h4{margin-bottom:8px;font-weight:950;} .faq-item p{font-size:14px;color:rgba(15,23,42,0.7);}
 
-    /* Footer & Modals (ALLINEATI ALLA HOME) */
+    /* Footer & Modals */
     footer{ background: #0b1220; color: #fff; padding: 44px 20px; text-align:center; border-top: 1px solid rgba(255,255,255,0.10); }
     .footer-content{ max-width: 980px; margin: 0 auto; }
     .footer-copyright{ font-size: 14px; margin-bottom: 10px; opacity: 0.9; font-weight: 850; }
@@ -152,14 +155,32 @@
     .modal.is-open, .modal-backdrop.is-open{ opacity:1; pointer-events:auto; }
     .modal.is-open{ transform: translateY(0); }
 
-    /* Responsive */
-    @media(max-width:768px){.faq-grid{grid-template-columns:1fr;}}
+    /* ========================================= */
+    /* UNIFIED MEDIA QUERIES PER TUTTE LE PAGINE */
+    /* ========================================= */
+    @media(max-width:980px){
+      .hero h1{font-size:36px;}
+    }
+    @media(max-width:768px){
+      .faq-grid{grid-template-columns:1fr;}
+    }
     @media(max-width:520px){
       .form-row{grid-template-columns:1fr;}
       .topbar-inner{ flex-wrap: wrap; gap: 10px; }
       .brand{ flex: 1 1 auto; }
       .nav{ flex: 1 1 100%; justify-content: flex-end; }
       .nav a{ display:inline-flex; font-size: 12px; padding: 8px 10px; }
+      
+      /* LOGO MOBILE STANDARDIZZATO */
+      .brand-mark { width: 48px; height: 48px; border-radius: 14px; }
+      .brand-mark img { width: 44px; height: 44px; }
+      .brand-name { font-size: 22px; }
+    }
+    @media (min-width: 768px){
+      /* LOGO DESKTOP STANDARDIZZATO */
+      .brand-mark { width: 58px; height: 58px; border-radius: 18px; }
+      .brand-mark img { width: 56px; height: 56px; }
+      .brand-name { font-size: 28px; }
     }
   </style>
 
@@ -456,7 +477,7 @@
 
     form.addEventListener('submit', handleSubmit);
 
-    // GESTIONE DEI POPUP LEGALI (Identica alla home)
+    // GESTIONE DEI POPUP LEGALI
     (function () {
       function ready(fn){
         if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fn);
