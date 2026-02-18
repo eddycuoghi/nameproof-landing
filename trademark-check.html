@@ -58,9 +58,12 @@
     .topbar .container{ padding-left: 22px; padding-right: 22px; }
     .topbar-inner{ display:flex; align-items:center; justify-content:space-between; padding: 16px 0; gap: 14px; }
     .brand{ display:flex; align-items:center; gap: 12px; text-decoration:none; min-width: 0; }
+    
+    /* LOGO BASE (Desktop) */
     .brand-mark{ width: 58px; height: 58px; border-radius: 18px; display:flex; align-items:center; justify-content:center; overflow:hidden; border: 1px solid rgba(15,23,42,0.08); background: #fff; box-shadow: 0 16px 40px rgba(2, 6, 23, 0.09); flex-shrink: 0; }
     .brand-mark img{ width: 56px; height: 56px; object-fit: contain; display:block; }
     .brand-name{ font-weight: 950; letter-spacing: -0.035em; font-size: 28px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    
     .nav{ display:flex; align-items:center; gap: 14px; flex-wrap: wrap; justify-content:flex-end; }
     .nav a{ text-decoration:none; color: rgba(15,23,42,0.70); font-weight: 850; font-size: 14px; padding: 8px 10px; border-radius: 999px; }
     .nav a:hover{ background: rgba(15,23,42,0.04); }
@@ -158,10 +161,33 @@
     .modal.is-open, .modal-backdrop.is-open{ opacity:1; pointer-events:auto; }
     .modal.is-open{ transform: translateY(0); }
 
-    /* Fix Media Queries Logo */
-    @media (max-width: 980px){ .hero-grid{ grid-template-columns: 1fr; } .hero h1{ font-size: 36px; } .problems{ grid-template-columns: 1fr; } }
-    @media (max-width: 520px){ .hero h1{ font-size: 30px; } .topbar-inner{ flex-wrap: wrap; gap: 10px; } .brand{ flex: 1 1 auto; } .nav{ flex: 1 1 100%; justify-content: flex-end; } .nav a{ display:inline-flex; font-size: 12px; padding: 8px 10px; } .pricing-badge{ display: none; } .brand-mark{ width:48px; height:48px; } .brand-mark img{ width:44px; height:44px; } .brand-name{ font-size: 1.25rem; } }
-    @media (min-width: 768px){ .brand-mark{ width:58px; height:58px; } .brand-mark img{ width:56px; height:56px; } .brand-name{ font-size: 28px; } }
+    /* ========================================= */
+    /* UNIFIED MEDIA QUERIES PER TUTTE LE PAGINE */
+    /* ========================================= */
+    @media (max-width: 980px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      .hero h1{ font-size: 36px; }
+      .problems{ grid-template-columns: 1fr; }
+    }
+    @media (max-width: 520px){
+      .hero h1{ font-size: 30px; }
+      .topbar-inner{ flex-wrap: wrap; gap: 10px; }
+      .brand{ flex: 1 1 auto; }
+      .nav{ flex: 1 1 100%; justify-content: flex-end; }
+      .nav a{ display:inline-flex; font-size: 12px; padding: 8px 10px; }
+      .pricing-badge{ display: none; }
+
+      /* LOGO MOBILE STANDARDIZZATO */
+      .brand-mark { width: 48px; height: 48px; border-radius: 14px; }
+      .brand-mark img { width: 44px; height: 44px; }
+      .brand-name { font-size: 22px; }
+    }
+    @media (min-width: 768px){
+      /* LOGO DESKTOP STANDARDIZZATO */
+      .brand-mark { width: 58px; height: 58px; border-radius: 18px; }
+      .brand-mark img { width: 56px; height: 56px; }
+      .brand-name { font-size: 28px; }
+    }
   </style>
 
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-D1XLG7DS3V"></script>
