@@ -2,14 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <link rel="preload" as="image" href="/nameproof-logo-new.png"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Free AI Startup Name Generator & Validator | NameProof</title>
+  <title>Free AI Startup Name Generator &amp; Validator | NameProof</title>
   <meta name="description" content="Tell us what you're building and get 3 free, tailored startup name ideas delivered to your inbox today. Professional naming without the agency price tag." />
   <meta name="keywords" content="free startup name generator, AI business name generator, brand name ideas, company naming tool, creative business names" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://nameproof.io/free-startup-name-generator" />
   <meta property="og:title" content="Free AI Startup Name Generator" />
   <meta property="og:description" content="Get 3 free, tailored startup name ideas delivered to your inbox today." />
+  <meta property="og:image" content="https://nameproof.io/nameproof-logo-new.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://nameproof.io/free-startup-name-generator" />
+  <meta name="twitter:title" content="Free AI Startup Name Generator &amp; Validator | NameProof" />
+  <meta name="twitter:description" content="Tell us what you&apos;re building and get 3 free tailored startup name ideas delivered to your inbox today." />
+  <meta name="twitter:image" content="https://nameproof.io/nameproof-logo-new.png" />
   <link rel="canonical" href="https://nameproof.io/free-startup-name-generator" />
   <link rel="icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -53,104 +60,48 @@
     a{ color: inherit; text-decoration:none; }
     .container{ max-width: 1120px; margin: 0 auto; padding: 0 22px; }
 
-    /* Top bar */
     .topbar{
-      position: sticky;
-      top: 0;
-      z-index: 50;
+      position: sticky; top: 0; z-index: 50;
       background: rgba(255,255,255,0.86);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--line);
     }
-    .topbar-inner{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding: 16px 0;
-      gap: 14px;
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap: 12px;
-      text-decoration:none;
-      min-width: 0;
-    }
-    
-    /* LOGO BASE (Desktop) */
-    .brand-mark{
-      width: 58px;
-      height: 58px;
-      border-radius: 18px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      overflow:hidden;
-      border: 1px solid rgba(15,23,42,0.08);
-      background: #fff;
-      box-shadow: 0 16px 40px rgba(2, 6, 23, 0.09);
-      flex-shrink: 0;
-    }
-    .brand-mark img{
-      width: 56px;
-      height: 56px;
-      object-fit: contain;
-      display:block;
-    }
-    .brand-name{
-      font-weight: 950;
-      letter-spacing: -0.035em;
-      font-size: 28px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    
-    .nav{
-      display:flex;
-      align-items:center;
-      gap: 14px;
-      flex-wrap: wrap;
-      justify-content:flex-end;
-    }
-    .nav a{
-      color: rgba(15,23,42,0.70);
-      font-weight: 850;
-      font-size: 14px;
-      padding: 8px 10px;
-      border-radius: 999px;
-    }
+    .topbar-inner{ display:flex; align-items:center; justify-content:space-between; padding: 16px 0; gap: 14px; }
+    .brand{ display:flex; align-items:center; gap: 12px; text-decoration:none; min-width: 0; }
+    .brand-mark{ width: 58px; height: 58px; border-radius: 18px; display:flex; align-items:center; justify-content:center; overflow:hidden; border: 1px solid rgba(15,23,42,0.08); background: #fff; box-shadow: 0 16px 40px rgba(2, 6, 23, 0.09); flex-shrink: 0; }
+    .brand-mark img{ width: 56px; height: 56px; object-fit: contain; display:block; }
+    .brand-name{ font-weight: 950; letter-spacing: -0.035em; font-size: 28px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .nav{ display:flex; align-items:center; gap: 14px; flex-wrap: nowrap; justify-content:flex-end; }
+    .nav a{ color: rgba(15,23,42,0.70); font-weight: 850; font-size: 14px; padding: 8px 10px; border-radius: 999px; white-space: nowrap; }
     .nav a:hover{ background: rgba(15,23,42,0.04); }
 
-    /* Struttura Hero specifica per il Generator */
-    .hero{padding:60px 0 40px;text-align:center;}
-    .hero h1{font-size:42px;font-weight:950;letter-spacing:-0.04em;margin-bottom:16px;}
-    .hero p{font-size:18px;color:rgba(15,23,42,0.7);max-width:600px;margin:0 auto 30px;}
-    
-    /* Form CSS */
-    .form-container{max-width:600px;margin:0 auto;background:#fff;border-radius:22px;border:1px solid rgba(15,23,42,0.12);padding:30px;box-shadow:0 18px 60px rgba(2,6,23,0.08);text-align:left;}
-    .form-group{margin-bottom:16px;} .form-group label{display:block;font-size:13px;font-weight:950;margin-bottom:8px;}
-    .form-group input, .form-group select, .form-group textarea{width:100%;padding:12px 14px;border:1px solid rgba(15,23,42,0.14);border-radius:14px;font-size:15px;background:#fff;transition: border-color .2s ease, box-shadow .2s ease;}
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus{outline:none;border-color:rgba(225,29,46,0.40);box-shadow:0 0 0 4px rgba(225,29,46,0.10);}
-    .form-group textarea{min-height:90px; resize:vertical;}
-    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-    
+    .hero{ padding:60px 0 40px; text-align:center; }
+    .hero h1{ font-size:42px; font-weight:950; letter-spacing:-0.04em; margin-bottom:16px; }
+    .hero p{ font-size:18px; color:rgba(15,23,42,0.7); max-width:600px; margin:0 auto 30px; }
+
+    .form-container{ max-width:600px; margin:0 auto; background:#fff; border-radius:22px; border:1px solid rgba(15,23,42,0.12); padding:30px; box-shadow:0 18px 60px rgba(2,6,23,0.08); text-align:left; }
+    .form-group{ margin-bottom:16px; }
+    .form-group label{ display:block; font-size:13px; font-weight:950; margin-bottom:8px; }
+    .form-group input, .form-group select, .form-group textarea{ width:100%; padding:12px 14px; border:1px solid rgba(15,23,42,0.14); border-radius:14px; font-size:15px; background:#fff; transition: border-color .2s ease, box-shadow .2s ease; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus{ outline:none; border-color:rgba(225,29,46,0.40); box-shadow:0 0 0 4px rgba(225,29,46,0.10); }
+    .form-group textarea{ min-height:90px; resize:vertical; }
+    .form-row{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
     .radio-group{ display:flex; gap: 12px; flex-wrap:wrap; margin-top: 8px; }
     .radio{ display:flex; align-items:center; gap: 8px; font-size: 14px; color: var(--ink); background: #fff; border: 1px solid rgba(15,23,42,0.12); padding: 10px 12px; border-radius: 999px; font-weight: 850; }
     .radio input{ accent-color: var(--red); }
     .helper{ margin-top: 8px; font-size: 13px; color: rgba(15,23,42,0.62); font-weight: 800; }
+    .submit-btn{ width:100%; padding:14px; background:linear-gradient(135deg,var(--red),var(--red2)); color:#fff; border:none; border-radius:16px; font-size:16px; font-weight:950; cursor:pointer; box-shadow:0 14px 30px rgba(225,29,46,0.16); transition: transform .15s ease, box-shadow .15s ease; }
+    .submit-btn:hover{ transform: translateY(-1px); box-shadow: 0 18px 40px rgba(185,28,28,0.18); }
+    .form-success{ display:none; background:rgba(34,197,94,.12); color:#166534; padding:18px; border-radius:14px; margin-top:14px; text-align:center; font-weight:950; border: 1px solid rgba(34,197,94,.24); }
+    .form-error{ display:none; background:rgba(239,68,68,.10); color:#991b1b; padding:14px; border-radius:14px; margin-top:14px; text-align:center; font-weight:950; border: 1px solid rgba(239,68,68,.22); }
 
-    .submit-btn{width:100%;padding:14px;background:linear-gradient(135deg,var(--red),var(--red2));color:#fff;border:none;border-radius:16px;font-size:16px;font-weight:950;cursor:pointer;box-shadow:0 14px 30px rgba(225,29,46,0.16); transition: transform .15s ease, box-shadow .15s ease;}
-    .submit-btn:hover{transform: translateY(-1px); box-shadow: 0 18px 40px rgba(185,28,28,0.18);}
-    .form-success{display:none;background:rgba(34,197,94,.12);color:#166534;padding:18px;border-radius:14px;margin-top:14px;text-align:center;font-weight:950; border: 1px solid rgba(34,197,94,.24);}
-    .form-error{display:none;background:rgba(239,68,68,.10);color:#991b1b;padding:14px;border-radius:14px;margin-top:14px;text-align:center;font-weight:950; border: 1px solid rgba(239,68,68,.22);}
-    
-    .section{padding:60px 0;background:var(--soft);} .section-title{text-align:center;font-size:30px;font-weight:950;margin-bottom:30px;}
-    .faq-grid{max-width:800px;margin:0 auto;display:grid;gap:20px;grid-template-columns:1fr 1fr;}
-    .faq-item{background:#fff;padding:20px;border-radius:16px;border:1px solid rgba(15,23,42,0.1);} .faq-item h4{margin-bottom:8px;font-weight:950;} .faq-item p{font-size:14px;color:rgba(15,23,42,0.7);}
+    .section{ padding:60px 0; background:var(--soft); }
+    .section-title{ text-align:center; font-size:30px; font-weight:950; margin-bottom:30px; }
+    .faq-grid{ max-width:800px; margin:0 auto; display:grid; gap:20px; grid-template-columns:1fr 1fr; }
+    .faq-item{ background:#fff; padding:20px; border-radius:16px; border:1px solid rgba(15,23,42,0.1); }
+    .faq-item h4{ margin-bottom:8px; font-weight:950; }
+    .faq-item p{ font-size:14px; color:rgba(15,23,42,0.7); }
 
-    /* Footer & Modals */
     footer{ background: #0b1220; color: #fff; padding: 44px 20px; text-align:center; border-top: 1px solid rgba(255,255,255,0.10); }
     .footer-content{ max-width: 980px; margin: 0 auto; }
     .footer-copyright{ font-size: 14px; margin-bottom: 10px; opacity: 0.9; font-weight: 850; }
@@ -158,6 +109,14 @@
     .footer-links{ font-size: 12px; color: rgba(226,232,240,0.85); font-weight: 850; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
     .footer-links a{ color: rgba(255,255,255,0.88); text-decoration:none; border-bottom: 1px solid rgba(255,255,255,0.18); padding-bottom: 1px; }
     .footer-links a:hover{ border-bottom-color: rgba(255,255,255,0.55); }
+
+    .cookie-banner{ position: fixed; left: 0; right: 0; bottom: 0; z-index: 9999; padding: 14px 16px; background: rgba(11,18,32,.92); color: #e2e8f0; display: none; backdrop-filter: blur(10px); }
+    .cookie-inner{ max-width: 980px; margin: 0 auto; display:flex; gap: 12px; align-items:center; justify-content:space-between; flex-wrap:wrap; }
+    .cookie-text{ font-size: 13px; line-height: 1.45; max-width: 680px; font-weight: 800; }
+    .cookie-actions{ display:flex; gap: 10px; flex-wrap:wrap; }
+    .cookie-btn{ border:none; border-radius: 999px; padding: 10px 14px; font-weight: 950; font-size: 13px; cursor:pointer; }
+    .cookie-btn.secondary{ background: rgba(148,163,184,.18); color: #e2e8f0; }
+    .cookie-btn.primary{ background: linear-gradient(135deg, var(--red), var(--red2)); color:#fff; }
 
     .modal-backdrop{ position: fixed; inset: 0; background: rgba(2, 6, 23, 0.62); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); opacity: 0; pointer-events: none; transition: opacity 180ms ease; z-index: 9998; }
     .modal{ position: fixed; inset: 0; display:flex; align-items:center; justify-content:center; padding: 22px; opacity: 0; pointer-events: none; transition: opacity 180ms ease, transform 180ms ease; transform: translateY(8px); z-index: 9999; }
@@ -169,27 +128,32 @@
     .modal.is-open, .modal-backdrop.is-open{ opacity:1; pointer-events:auto; }
     .modal.is-open{ transform: translateY(0); }
 
-    /* UNIFIED MEDIA QUERIES PER TUTTE LE PAGINE */
-    @media(max-width:980px){
-      .hero h1{font-size:36px;}
-    }
-    @media(max-width:768px){
-      .faq-grid{grid-template-columns:1fr;}
-    }
+    .steps-wrap{ max-width: 920px; margin: 0 auto; }
+    .steps-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 18px; }
+    .step-card{ background:#fff; border:1px solid rgba(15,23,42,0.10); border-radius: 18px; padding: 18px; box-shadow: 0 10px 24px rgba(2,6,23,0.05); text-align:left; }
+    .step-num{ width: 34px; height: 34px; border-radius: 12px; display:flex; align-items:center; justify-content:center; background: rgba(225,29,46,0.10); color: var(--red); font-weight: 950; margin-bottom: 10px; }
+    .step-card h3{ font-size: 16px; font-weight: 950; letter-spacing:-0.02em; margin-bottom: 6px; }
+    .step-card p{ color: rgba(15,23,42,0.65); font-weight: 800; font-size: 14px; line-height:1.55; }
+    .steps-cta{ margin-top: 18px; display:flex; gap: 10px; justify-content:center; flex-wrap:wrap; }
+    .steps-cta .btn{ display:inline-flex; align-items:center; justify-content:center; gap:10px; border-radius:999px; font-weight:950; letter-spacing:-0.01em; padding: 12px 16px; border:1px solid transparent; cursor:pointer; font-size:14px; text-decoration:none; }
+    .steps-cta .btn.primary{ background: linear-gradient(135deg, var(--red), var(--red2)); color:#fff; box-shadow: 0 12px 30px rgba(225,29,46,0.14); }
+    .steps-cta .btn.secondary{ background:#fff; border: 1px solid rgba(15,23,42,0.14); color: rgba(15,23,42,0.85); }
+    .steps-cta .btn.secondary:hover{ background: rgba(15,23,42,0.03); }
+
+    @media(max-width:980px){ .hero h1{ font-size:36px; } }
+    @media(max-width:768px){ .faq-grid{ grid-template-columns:1fr; } }
+    @media(max-width:900px){ .steps-grid{ grid-template-columns:1fr; } }
     @media(max-width:520px){
-      .form-row{grid-template-columns:1fr;}
+      .form-row{ grid-template-columns:1fr; }
       .topbar-inner{ flex-wrap: wrap; gap: 10px; }
       .brand{ flex: 1 1 auto; }
       .nav{ flex: 1 1 100%; justify-content: flex-end; }
-      .nav a{ display:inline-flex; font-size: 12px; padding: 8px 10px; }
-      
-      /* LOGO MOBILE STANDARDIZZATO */
+      .nav a{ display:inline-flex; font-size: 12px; padding: 6px 8px; }
       .brand-mark { width: 48px; height: 48px; border-radius: 14px; }
       .brand-mark img { width: 44px; height: 44px; }
       .brand-name { font-size: 22px; }
     }
     @media (min-width: 768px){
-      /* LOGO DESKTOP STANDARDIZZATO */
       .brand-mark { width: 58px; height: 58px; border-radius: 18px; }
       .brand-mark img { width: 56px; height: 56px; }
       .brand-name { font-size: 28px; }
@@ -201,7 +165,6 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-D1XLG7DS3V');
   </script>
 </head>
@@ -211,14 +174,13 @@
     <div class="container">
       <div class="topbar-inner">
         <a class="brand" href="/">
-          <span class="brand-mark"><img src="./nameproof-logo-new.png" alt="NameProof"></span>
+          <span class="brand-mark"><img src="/nameproof-logo-new.png" alt="NameProof"></span>
           <span class="brand-name">NameProof</span>
         </a>
         <nav class="nav">
           <a href="/domain-availability-checker">Domains</a>
           <a href="/trademark-check">Trademarks</a>
           <a href="/free-startup-name-generator">Free Names</a>
-          <a href="/#pricing">Pricing</a>
         </nav>
       </div>
     </div>
@@ -227,8 +189,11 @@
   <main>
     <section class="hero">
       <div class="container">
-        <h1>Free Startup Name Generator & Validator</h1>
-        <p>Tell us what you're building (or your existing name) and receive 3 tailored suggestions the same day.</p>
+        <h1>Free Startup Name Generator &amp; Validator</h1>
+        <p style="margin-top:10px; font-size:14px; color:rgba(15,23,42,0.65); font-weight:700;">
+          This is a preview of the full NameProof report &mdash; including 30 generated names and full validation.
+        </p>
+        <p>Tell us what you&apos;re building (or your existing name) and receive 3 tailored suggestions the same day.</p>
 
         <div class="form-container">
           <form id="betaForm">
@@ -254,7 +219,7 @@
             <div class="form-group" id="groupBrandName" style="grid-column: 1 / -1; display:none;">
               <label for="brandName">Your brand name <span aria-hidden="true">*</span></label>
               <input type="text" id="brandName" name="brandName" placeholder="Enter the name you want us to validate" />
-              <div class="helper">We'll analyze this exact name and include alternatives if needed.</div>
+              <div class="helper">We&apos;ll analyze this exact name and include alternatives if needed.</div>
             </div>
 
             <div class="form-row">
@@ -262,12 +227,10 @@
                 <label for="fullName">Name <span aria-hidden="true">*</span></label>
                 <input type="text" id="fullName" name="fullName" placeholder="Your name" required />
               </div>
-
               <div class="form-group">
                 <label for="email">Email <span aria-hidden="true">*</span></label>
                 <input type="email" id="email" name="email" placeholder="you@company.com" required />
               </div>
-
               <div class="form-group">
                 <label for="businessType">Business type</label>
                 <select id="businessType" name="businessType">
@@ -294,7 +257,6 @@
                   <option value="Minimal">Minimal</option>
                 </select>
               </div>
-
               <div class="form-group">
                 <label for="market">Target market</label>
                 <select id="market" name="market">
@@ -316,16 +278,49 @@
             <button type="submit" class="submit-btn" id="submitBtn">Get my 3 free names</button>
 
             <div class="form-success" id="successMessage" style="text-align:left;">
-              <div style="font-size:16px; margin-bottom:8px;">✓ <strong>Sent!</strong> You'll receive your 3 names today.</div>
+              <div style="font-size:16px; margin-bottom:8px;">&#10003; <strong>Sent!</strong> You&apos;ll receive your 3 names today.</div>
               <div style="font-size:14px; font-weight:700; color:#166534; line-height:1.5;">
-                Already have a name in mind? Skip the line and get a deep-dive global trademark and domain validation report right now.
+                Like one of your names? Go deeper with a full validation report &mdash; <strong>30 brand names</strong> checked for domains, social handles, pronunciation in 8 languages, and trademark risks across USPTO, EUIPO &amp; WIPO.
               </div>
               <a href="https://buy.stripe.com/fZu6oJdnx97GgZ1aQVb3q02" target="_blank" rel="noopener" onclick="gtag('event', 'checkout_click', {'event_category': 'ecommerce', 'event_label': 'Stripe_Button_Upsell_FreeNames'});" style="display:inline-block; margin-top:12px; background:linear-gradient(135deg, #E11D2E, #B91C1C); color:#fff; padding:10px 16px; border-radius:12px; text-decoration:none; font-weight:950; font-size:14px; box-shadow: 0 4px 14px rgba(225,29,46,0.2);">
-                Get your Validation Report €19
+                Get your Full Validation Report &euro;19
               </a>
             </div>
             <div class="form-error" id="errorMessage"></div>
           </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="What happens next" style="padding-top:40px;">
+      <div class="container">
+        <div class="steps-wrap">
+          <h2 class="section-title">What happens next</h2>
+          <div style="text-align:center; color: rgba(15,23,42,0.62); font-weight: 800; max-width: 760px; margin: 0 auto 6px;">
+            A simple same-day flow: free ideas first, then a professional validation report if you want to go deeper.
+          </div>
+          <div class="steps-grid">
+            <div class="step-card">
+              <div class="step-num">1</div>
+              <h3>Submit your request</h3>
+              <p>Tell us what you&apos;re building (or the exact name you want to validate). We use structured prompts to avoid generic outputs.</p>
+            </div>
+            <div class="step-card">
+              <div class="step-num">2</div>
+              <h3>Receive 3 names same-day</h3>
+              <p>You&apos;ll get 3 tailored options in your inbox. If you already have a name, we&apos;ll focus on validating it and suggesting safer alternatives.</p>
+            </div>
+            <div class="step-card">
+              <div class="step-num">3</div>
+              <h3>Upgrade to the &euro;19 report (optional)</h3>
+              <p>Get domains + social handles, global pronunciation checks, and trademark risk flags in one professional PDF &mdash; delivered same day.</p>
+            </div>
+          </div>
+          <div class="steps-cta">
+            <a class="btn primary" href="/#pricing">Get your Brand Validation Report &euro;19</a>
+            <a class="btn secondary" href="/domain-availability-checker">Check Domains</a>
+            <a class="btn secondary" href="/trademark-check">Check Trademarks</a>
+          </div>
         </div>
       </div>
     </section>
@@ -336,11 +331,11 @@
         <div class="faq-grid">
           <div class="faq-item">
             <h4>No generic ChatGPT outputs</h4>
-            <p>Standard chatbots give you names like "CoffeePro" or "InnovateTech". We use fine-tuned prompting to generate modern, distinctive startup names.</p>
+            <p>Standard chatbots give you names like &ldquo;CoffeePro&rdquo; or &ldquo;InnovateTech&rdquo;. We use fine-tuned prompting to generate modern, distinctive startup names.</p>
           </div>
           <div class="faq-item">
             <h4>Is it really free?</h4>
-            <p>Yes. We send you 3 free names to prove our quality. If you like one and want to do a deep-dive legal/domain check, you can purchase our full €19 report later.</p>
+            <p>Yes. We send you 3 free names to prove our quality. If you want a deep-dive validation across 30 names &mdash; domains, trademarks &amp; pronunciation &mdash; you can get the full &euro;19 report.</p>
           </div>
         </div>
       </div>
@@ -350,30 +345,28 @@
   <footer>
     <div class="footer-content">
       <div class="footer-copyright" style="margin-bottom:8px;">
-        Built by <strong>Nexustri</strong> — AI Product Studio
+        Built by <strong>Nexustri</strong> &mdash; AI Product Studio
       </div>
-      <div class="footer-copyright">© 2026 NameProof. All rights reserved.</div>
-
+      <div class="footer-copyright">&copy; 2026 NameProof. All rights reserved.</div>
       <div class="footer-disclaimer">
         NameProof provides professional brand validation for informational purposes only. This does not constitute legal advice or a formal trademark guarantee.
         We recommend consulting an intellectual property lawyer for final trademark clearance before significant brand investment.
       </div>
-
       <div class="footer-links">
         <a href="/domain-availability-checker">Domain Checker</a>
-        <span aria-hidden="true">•</span>
+        <span aria-hidden="true">&bull;</span>
         <a href="/trademark-check">Trademark Search</a>
-        <span aria-hidden="true">•</span>
+        <span aria-hidden="true">&bull;</span>
         <a href="/free-startup-name-generator">Free Name Generator</a>
-        <span aria-hidden="true">•</span>
-        <a href="#" class="footer-link js-open-modal" data-modal="contactModal">Contact</a>
-        <span aria-hidden="true">•</span>
-        <a href="#" class="footer-link js-open-modal" data-modal="privacyModal">Privacy Policy</a>
-        <span aria-hidden="true">•</span>
-        <a href="#" class="footer-link js-open-modal" data-modal="termsModal">Terms of Service</a>
-        <span aria-hidden="true">•</span>
-        <a href="https://x.com/nameproof_io" target="_blank" rel="noopener">𝕏 Twitter</a>
-        <span aria-hidden="true">•</span>
+        <span aria-hidden="true">&bull;</span>
+        <a href="#" class="js-open-modal" data-modal="contactModal">Contact</a>
+        <span aria-hidden="true">&bull;</span>
+        <a href="#" class="js-open-modal" data-modal="privacyModal">Privacy Policy</a>
+        <span aria-hidden="true">&bull;</span>
+        <a href="#" class="js-open-modal" data-modal="termsModal">Terms of Service</a>
+        <span aria-hidden="true">&bull;</span>
+        <a href="https://x.com/nameproof_io" target="_blank" rel="noopener">&#120143; X</a>
+        <span aria-hidden="true">&bull;</span>
         <a href="https://linkedin.com/company/nameproof" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
@@ -381,9 +374,7 @@
 
   <div class="cookie-banner" id="cookieBanner" aria-live="polite">
     <div class="cookie-inner">
-      <div class="cookie-text">
-        We use essential cookies to make this site work. With your permission, we may also use analytics cookies to improve the experience.
-      </div>
+      <div class="cookie-text">We use essential cookies to make this site work. With your permission, we may also use analytics cookies to improve the experience.</div>
       <div class="cookie-actions">
         <button class="cookie-btn secondary" id="cookieEssential">Essential only</button>
         <button class="cookie-btn primary" id="cookieAccept">Accept analytics</button>
@@ -395,7 +386,7 @@
 
   <div class="modal" id="privacyModal" role="dialog" aria-modal="true" aria-labelledby="privacyTitle" aria-hidden="true">
     <div class="modal-card">
-      <button class="modal-close" type="button" aria-label="Close">×</button>
+      <button class="modal-close" type="button" aria-label="Close">&times;</button>
       <h3 id="privacyTitle">Privacy Policy</h3>
       <p><strong>What we collect.</strong> When you submit the form, we collect the information you provide (e.g., business idea / brand name, market, style preferences) and your email address so we can deliver your report.</p>
       <p><strong>How we use it.</strong> We use your data only to generate and send the NameProof report and to provide customer support. We do not sell your personal data.</p>
@@ -407,29 +398,26 @@
 
   <div class="modal" id="termsModal" role="dialog" aria-modal="true" aria-labelledby="termsTitle" aria-hidden="true">
     <div class="modal-card">
-      <button class="modal-close" type="button" aria-label="Close">×</button>
+      <button class="modal-close" type="button" aria-label="Close">&times;</button>
       <h3 id="termsTitle">Terms of Service</h3>
       <p><strong>Service.</strong> NameProof provides AI-assisted naming suggestions and basic availability/risk signals for informational purposes only.</p>
       <p><strong>No legal advice.</strong> We are not a law firm and do not provide legal advice. Trademark clearance requires professional review.</p>
       <p><strong>Delivery.</strong> We aim to deliver reports within the timeframe shown on the site; delays may occur due to volume or third-party services.</p>
       <p><strong>Refunds.</strong> If we cannot deliver your report, contact us and we will make it right (including a refund when appropriate).</p>
-      <p><strong>Acceptable use.</strong> You agree not to use the service for unlawful purposes or to infringe others' rights.</p>
+      <p><strong>Acceptable use.</strong> You agree not to use the service for unlawful purposes or to infringe others&apos; rights.</p>
     </div>
   </div>
 
   <div class="modal" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="contactTitle" aria-hidden="true">
     <div class="modal-card">
-      <button class="modal-close" type="button" aria-label="Close">×</button>
+      <button class="modal-close" type="button" aria-label="Close">&times;</button>
       <h3 id="contactTitle">Contact</h3>
-      <p>For support, questions, or data requests, email us at
-        <a class="footer-link" href="mailto:hello@nameproof.io" style="color: #60a5fa;">hello@nameproof.io</a>.
-      </p>
+      <p>For support, questions, or data requests, email us at <a href="mailto:hello@nameproof.io" style="color: #60a5fa;">hello@nameproof.io</a>.</p>
       <p>If you have an order/payment issue, include your email used at checkout and (if available) your Stripe receipt reference.</p>
     </div>
   </div>
 
   <script>
-    // IL TUO WEBHOOK ORIGINALE MAKE.COM
     const webhookUrl = "https://hook.eu1.make.com/gaa9lgj9ms6mz7q64rt69o3156kdm8wh";
 
     const form = document.getElementById('betaForm');
@@ -440,7 +428,6 @@
     const businessIdea = document.getElementById('businessIdea');
     const brandName = document.getElementById('brandName');
 
-    // Funzione per mostrare/nascondere i campi
     function syncConditionalFields() {
       const hasName = document.querySelector('input[name="hasName"]:checked')?.value || 'no';
       if (hasName === 'yes') {
@@ -461,7 +448,6 @@
     );
     syncConditionalFields();
 
-    // Invio dei dati a Make.com
     async function handleSubmit(event) {
       event.preventDefault();
       try {
@@ -495,10 +481,8 @@
 
         if (!res.ok) throw new Error('Submission failed. Please try again.');
 
-        // GA4: TRACCIAMENTO DEL LEAD AGGIUNTO QUI SOTTO
         successMessage.style.display = 'block';
         gtag('event', 'generate_lead', {'event_category': 'form', 'event_label': 'Free_Names_Request'});
-        
         form.reset();
         syncConditionalFields();
       } catch (e) {
@@ -509,45 +493,38 @@
 
     form.addEventListener('submit', handleSubmit);
 
-    // GESTIONE DEI POPUP LEGALI
-    (function () {
-      function ready(fn){
-        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fn);
-        else fn();
+    const banner = document.getElementById('cookieBanner');
+    function setConsent(v){ localStorage.setItem('np_cookie_consent', v); banner.style.display = 'none'; }
+    if (!localStorage.getItem('np_cookie_consent')) banner.style.display = 'block';
+    document.getElementById('cookieEssential').addEventListener('click', () => setConsent('essential'));
+    document.getElementById('cookieAccept').addEventListener('click', () => setConsent('all'));
+
+    (function(){
+      const backdrop = document.getElementById('modalBackdrop');
+      if (!backdrop) return;
+      let activeModal = null, lastFocus = null;
+      function openModal(id){
+        const modal = document.getElementById(id);
+        if (!modal) return;
+        lastFocus = document.activeElement; activeModal = modal;
+        backdrop.classList.add('is-open'); modal.classList.add('is-open'); document.body.classList.add('modal-open');
+        backdrop.setAttribute('aria-hidden','false'); modal.setAttribute('aria-hidden','false');
+        const btn = modal.querySelector('.modal-close'); if (btn) btn.focus();
       }
-
-      ready(function(){
-        const backdrop = document.getElementById('modalBackdrop');
-        if (!backdrop) return;
-        let activeModal = null; let lastFocus = null;
-
-        function openModal(modalId) {
-          const modal = document.getElementById(modalId);
-          if (!modal) return;
-          lastFocus = document.activeElement; activeModal = modal;
-          backdrop.classList.add('is-open'); modal.classList.add('is-open'); document.body.classList.add('modal-open');
-          backdrop.setAttribute('aria-hidden', 'false'); modal.setAttribute('aria-hidden', 'false');
-          const closeBtn = modal.querySelector('.modal-close'); if (closeBtn) closeBtn.focus();
-        }
-
-        function closeModal() {
-          if (!activeModal) return;
-          activeModal.classList.remove('is-open'); backdrop.classList.remove('is-open'); document.body.classList.remove('modal-open');
-          activeModal.setAttribute('aria-hidden', 'true'); backdrop.setAttribute('aria-hidden', 'true');
-          const toFocus = lastFocus; activeModal = null; lastFocus = null;
-          if (toFocus && typeof toFocus.focus === 'function') toFocus.focus();
-        }
-
-        document.addEventListener('click', function(e){
-          const opener = e.target.closest && e.target.closest('.js-open-modal');
-          if (opener) { e.preventDefault(); const id = opener.getAttribute('data-modal'); if (id) openModal(id); return; }
-          const closeBtn = e.target.closest && e.target.closest('.modal-close');
-          if (closeBtn) { e.preventDefault(); closeModal(); return; }
-          if (e.target === backdrop) closeModal();
-        });
-
-        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+      function closeModal(){
+        if (!activeModal) return;
+        activeModal.classList.remove('is-open'); backdrop.classList.remove('is-open'); document.body.classList.remove('modal-open');
+        activeModal.setAttribute('aria-hidden','true'); backdrop.setAttribute('aria-hidden','true');
+        const f = lastFocus; activeModal = null; lastFocus = null;
+        if (f && f.focus) f.focus();
+      }
+      document.addEventListener('click', e => {
+        const opener = e.target.closest('.js-open-modal');
+        if (opener){ e.preventDefault(); openModal(opener.dataset.modal); return; }
+        if (e.target.closest('.modal-close')){ e.preventDefault(); closeModal(); return; }
+        if (e.target === backdrop) closeModal();
       });
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
     })();
   </script>
 </body>
