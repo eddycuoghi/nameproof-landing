@@ -183,10 +183,12 @@
   .disclaimer-box p { font-size: 10px; color: #94a3b8; line-height: 1.6; font-style: italic; }
 
   @media print {
-    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    .cover { page-break-after: always; }
+    @page { margin: 0; size: A4; }
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; margin: 0; }
+    .cover { page-break-after: always; height: 297mm; }
     .report-page { page-break-after: always; }
     .report-page:last-child { page-break-after: avoid; }
+    .final-page { page-break-after: avoid; }
   }
 </style>
 </head>
