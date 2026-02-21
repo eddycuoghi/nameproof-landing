@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>NameProof Brand Report — Nexustri</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #0f172a;
+    background: #fff;
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    padding: 0;
+    background: #fff;
+  }
+
+  .cover {
+    width: 210mm;
+    height: 297mm;
+    background: #0f172a;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 52px 48px;
+    page-break-after: always;
+  }
+  .cover-logo { display: flex; align-items: center; gap: 14px; }
+  .cover-logo-mark {
+    width: 52px; height: 52px; border-radius: 14px;
+    background: #fff; display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .cover-logo-mark img { width: 48px; height: 48px; object-fit: contain; }
+  .cover-logo-name { font-size: 26px; font-weight: 900; letter-spacing: -0.03em; }
+  .cover-center { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+  .cover-tag {
+    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: rgba(255,255,255,0.45); font-weight: 700; margin-bottom: 18px;
+  }
+  .cover-title {
+    font-size: 42px; font-weight: 900; letter-spacing: -0.04em;
+    line-height: 1.05; margin-bottom: 10px;
+  }
+  .cover-title span { color: #E11D2E; }
+  .cover-subtitle { font-size: 16px; color: rgba(255,255,255,0.55); font-weight: 600; }
+  .cover-meta {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+    margin-top: 40px;
+  }
+  .cover-meta-item {
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 10px; padding: 14px 16px;
+  }
+  .cover-meta-item .label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.40); font-weight: 700; margin-bottom: 4px; }
+  .cover-meta-item .value { font-size: 15px; font-weight: 800; color: #fff; }
+  .cover-score {
+    display: flex; align-items: center; gap: 16px;
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 14px; padding: 20px 24px; margin-top: 10px;
+  }
+  .score-big { font-size: 52px; font-weight: 900; line-height: 1; color: #fff; }
+  .score-info .score-label { font-size: 11px; color: rgba(255,255,255,0.40); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
+  .score-info .score-risk { font-size: 18px; font-weight: 800; color: #fff; margin-top: 2px; }
+  .score-info .score-rec { font-size: 12px; color: rgba(255,255,255,0.55); font-weight: 600; margin-top: 4px; max-width: 280px; }
+  .cover-footer { font-size: 11px; color: rgba(255,255,255,0.28); font-weight: 600; }
+
+  .report-page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 36px 48px;
+    page-break-after: always;
+  }
+  .report-page:last-child { page-break-after: avoid; }
+
+  .page-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-bottom: 14px; border-bottom: 2px solid #0f172a; margin-bottom: 28px;
+  }
+  .page-header .ph-brand { display: flex; align-items: center; gap: 10px; }
+  .page-header .ph-logo {
+    width: 28px; height: 28px; border-radius: 8px; background: #0f172a;
+    display: flex; align-items: center; justify-content: center; overflow: hidden;
+  }
+  .page-header .ph-logo img { width: 24px; height: 24px; object-fit: contain; }
+  .page-header .ph-name { font-size: 14px; font-weight: 900; letter-spacing: -0.02em; }
+  .page-header .ph-meta { font-size: 11px; color: #64748b; font-weight: 600; }
+
+  .section { margin-bottom: 28px; }
+  .section-title {
+    font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: #64748b; font-weight: 800; margin-bottom: 12px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .section-title::after {
+    content: ''; flex: 1; height: 1px; background: rgba(15,23,42,0.10);
+  }
+
+  .summary-box {
+    background: #f8fafc; border: 1px solid rgba(15,23,42,0.10);
+    border-radius: 12px; padding: 18px 20px; margin-bottom: 20px;
+  }
+  .summary-box .rec-label { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #64748b; font-weight: 800; margin-bottom: 6px; }
+  .summary-box .rec-text { font-size: 13px; font-weight: 700; color: #0f172a; line-height: 1.5; }
+
+  .check-list { display: grid; gap: 8px; }
+  .check-item {
+    display: flex; align-items: flex-start; gap: 10px;
+    background: #f8fafc; border: 1px solid rgba(15,23,42,0.08);
+    border-radius: 10px; padding: 10px 14px;
+  }
+  .check-item .ci-icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+  .check-item .ci-content { flex: 1; }
+  .check-item .ci-title { font-size: 13px; font-weight: 800; color: #0f172a; }
+  .check-item .ci-note { font-size: 11px; color: #64748b; font-weight: 600; margin-top: 2px; }
+  .check-item .ci-risk {
+    font-size: 10px; font-weight: 900; letter-spacing: 0.08em;
+    padding: 3px 8px; border-radius: 999px; flex-shrink: 0; align-self: center;
+  }
+  .risk-low { background: rgba(34,197,94,0.12); color: #166534; }
+  .risk-med { background: rgba(245,158,11,0.12); color: #92400e; }
+  .risk-high { background: rgba(239,68,68,0.12); color: #991b1b; }
+
+  .risk-summary {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 12px; padding: 10px 14px;
+    background: #fff; border: 1px solid rgba(15,23,42,0.10); border-radius: 10px;
+  }
+  .risk-summary .rs-label { font-size: 11px; color: #64748b; font-weight: 700; }
+  .risk-summary .rs-val { font-size: 12px; font-weight: 900; }
+
+  .alt-box {
+    background: rgba(225,29,46,0.05); border: 1px solid rgba(225,29,46,0.15);
+    border-radius: 10px; padding: 12px 16px; margin-top: 10px;
+  }
+  .alt-box .alt-label { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #E11D2E; font-weight: 800; margin-bottom:6px; }
+  .alt-box .alt-items { display: flex; gap: 8px; flex-wrap: wrap; }
+  .alt-box .alt-tag {
+    background: #fff; border: 1px solid rgba(225,29,46,0.20);
+    border-radius: 999px; padding: 4px 12px; font-size: 12px; font-weight: 800; color: #0f172a;
+  }
+
+  .final-page {
+    width: 210mm; min-height: 297mm; padding: 36px 48px;
+    display: flex; flex-direction: column;
+  }
+  .top5-grid { display: grid; gap: 10px; margin-top: 4px; }
+  .top5-item {
+    display: flex; align-items: center; gap: 14px;
+    background: #f8fafc; border: 1px solid rgba(15,23,42,0.08);
+    border-radius: 12px; padding: 14px 16px;
+  }
+  .top5-num {
+    width: 32px; height: 32px; border-radius: 10px;
+    background: #0f172a; color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 900; flex-shrink: 0;
+  }
+  .top5-name { font-size: 16px; font-weight: 900; letter-spacing: -0.02em; }
+  .top5-note { font-size: 11px; color: #64748b; font-weight: 600; margin-top: 2px; }
+  .top5-score {
+    margin-left: auto; font-size: 13px; font-weight: 900;
+    background: rgba(34,197,94,0.12); color: #166534;
+    padding: 4px 12px; border-radius: 999px;
+  }
+
+  .disclaimer-box {
+    margin-top: auto; padding: 16px 20px;
+    background: #f8fafc; border: 1px solid rgba(15,23,42,0.08);
+    border-radius: 12px;
+  }
+  .disclaimer-box p { font-size: 10px; color: #94a3b8; line-height: 1.6; font-style: italic; }
+
+  @media print {
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .cover { page-break-after: always; }
+    .report-page { page-break-after: always; }
+    .report-page:last-child { page-break-after: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<div class="cover">
+  <div class="cover-logo">
+    <div class="cover-logo-mark">
+      <img src="https://nameproof.io/nameproof-logo-new.png" alt="NameProof"/>
+    </div>
+    <span class="cover-logo-name">NameProof</span>
+  </div>
+
+  <div class="cover-center">
+    <div class="cover-tag">Brand Risk Assessment Report</div>
+    <div class="cover-title">Your brand,<br><span>validated.</span></div>
+    <div class="cover-subtitle">Domains · Pronunciation · Social · Trademark</div>
+
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <div class="label">Brand Analyzed</div>
+        <div class="value">Nexustri</div>
+      </div>
+      <div class="cover-meta-item">
+        <div class="label">Report ID</div>
+        <div class="value">NP-2025-001</div>
+      </div>
+      <div class="cover-meta-item">
+        <div class="label">Generated</div>
+        <div class="value">Dec 11, 2025</div>
+      </div>
+      <div class="cover-meta-item">
+        <div class="label">Valid Until</div>
+        <div class="value">Jan 10, 2026</div>
+      </div>
+    </div>
+
+    <div class="cover-score">
+      <div class="score-big">76</div>
+      <div class="score-info">
+        <div class="score-label">Overall Risk Score / 100</div>
+        <div class="score-risk">Medium-Low Risk</div>
+        <div class="score-rec">Proceed with caution — address LinkedIn handle conflict before launch</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cover-footer">
+    NameProof.io · hello@nameproof.io · Professional brand validation for informational purposes only
+  </div>
+</div>
+
+<!-- PAGE 1 — PRONUNCIATION + DOMAINS -->
+<div class="report-page">
+  <div class="page-header">
+    <div class="ph-brand">
+      <div class="ph-logo"><img src="https://nameproof.io/nameproof-logo-new.png" alt="NP"/></div>
+      <span class="ph-name">NameProof</span>
+    </div>
+    <div class="ph-meta">Nexustri · NP-2025-001 · Dec 11, 2025</div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">1. Global Pronunciation Analysis</div>
+    <div class="summary-box">
+      <div class="rec-label">Methodology</div>
+      <div class="rec-text">Phonetic analysis across 8+ languages. Scores simulate native speaker ease of pronunciation and memorability.</div>
+    </div>
+    <div class="check-list">
+      <div class="check-item">
+        <span class="ci-icon">✅</span>
+        <div class="ci-content">
+          <div class="ci-title">English (US/UK) — "NEK-soo-stree"</div>
+          <div class="ci-note">Clear, modern, easy to spell. Strong tech association.</div>
+        </div>
+        <span class="ci-risk risk-low">LOW</span>
+      </div>
+      <div class="check-item">
+        <span class="ci-icon">✅</span>
+        <div class="ci-content">
+          <div class="ci-title">Italian — "Neh-KOOS-tree"</div>
+          <div class="ci-note">Natural pronunciation. No negative connotations.</div>
+        </div>
+        <span class="ci-risk risk-low">LOW</span>
+      </div>
+      <div class="check-item">
+        <span class="ci-icon">✅</span>
+        <div class="ci-content">
+          <div class="ci-title">Spanish / Portuguese</div>
+          <div class="ci-note">Pronounceable. Minor adaptation needed. No issues.</div>
+        </div>
+        <span class="ci-risk risk-low">LOW</span>
+      </div>
+      <div class="check-item">
+        <span class="ci-icon">✅</span>
+        <div class="ci-content">
+          <div class="ci-title">French / German</div>
+          <div class="ci-note">Slight adaptation but recognizable. No negative meanings.</div>
+        </div>
+        <span class="ci-risk risk-low">LOW</span>
+      </div>
+      <div class="check-item">
+        <span class="ci-icon">⚠️</span>
+        <div class="ci-content">
+          <div class="ci-title">Mandarin — "Nai-ke-si-te-li"</div>
+          <div class="ci-note">Complex transliteration. Minor friction for non-native speakers.</div>
+        </div>
+        <span class="ci-risk risk-med">MEDIUM</span>
+      </div>
+      <div class="check-item">
+        <span class="ci-icon">✅</span>
+        <div class="ci-content">
+          <div class="ci-title">Japanese / Arabic</div>
+          <div class="ci-note">Phonetically adaptable. No cultural conflicts identified.</div>
+        </div>
+        <span class="ci-risk risk-low">LOW</span>
+      </div>
+    </div>
+    <div class="risk-summary">
+      <span class="rs-label">Overall Pronunciation Risk</span>
+      <span class="rs-val" style="color:#16a34a;">LOW — 91/100</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">2. Domain Availability</div>
+    <div class="check-list">
+      <div class="check-item">
+        <span class="ci-icon">✅</span>
+        <div class="ci-content">
+          <div class="ci-title">nexustri.com — AVAILABLE</div>
+          <div class="ci-note">Primary domain. Secure immediately.</div>
+        </div>
+        <span class="ci-risk risk-low">PRIORITY</span>
+      </div>
+      <div class="check-item">
+        <span class="ci-icon">✅</span>
+        <div class="ci-content">
+          <div class="ci-title">nexustri.io — AVAILABLE</div>
+          <div class="ci-note">Strong tech/SaaS alternative. Recommended to secure.</div>
+        </div>
+        <span class="ci-risk risk-low">SECURE</span>
+      </div>
+      <div class="check-item">
+        <span class="ci-icon">⚠️</span>
+        <div class="ci-content">
+          <div class="ci-title">nexustri.ai — AVAILABLE (premium pricing)</div>
+          <div class="ci-note">Available but at premium cost. Consider if AI positioning is core.</div>
+        </div>
+        <span class="ci-risk risk-med">OPTIONAL</span>
+      </div>
+    </div>
+    <div class="risk-summary">
+      <span class="rs-label">Overall Domain Risk</span>
+      <span class="rs-val" style="color:#16a34a;">LOW — Secure .com and .io immediately</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2 — SOCIAL + TRADEMARK -->
+<div class="report-page">
+  <div class="page-header">
+    <div class="ph-brand">
+      <div class="ph-logo"><img src="https://nameproof.io/nameproof-logo-new.png" alt="NP"/></div>
+      <span class="ph-name">NameProof</span>
+    </div>
+    <div class="ph-meta">Nexustri · NP-2025-001 · Dec 11, 2025</div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">3. Social Handle Availability</div>
+    <div class="check-list">
+      <div class="check-item">
+        <span class="ci-icon">❌</span>
+        <div class="ci-content">
+          <div class="ci-title">X (Twitter) @nexustri — TAKEN</div>
+          <div class="ci-note">Account exists. Not active but registered.</div>
+        </div>
+        <span class="ci-risk risk-high">TAKEN</span>
+      </div>
+      <div class="check-item">
+        <span class="ci-icon">✅</span>
+        <div class="ci-content">
+          <div class="ci-title">X (Twitter) @Nexustri_com — AVAILABLE</div>
+          <div class="ci-note">Clean alternative. Maintains brand recognition.</div>
+        </div>
+        <span class="ci-risk risk-low">USE THIS</span>
+      </div>
+      <div class="check-item">
+        <span class="ci-icon">✅</span>
+        <div class="ci-content">
+          <div class="ci-title">Instagram @nexustri — AVAILABLE</div>
+          <div class="ci-note">Secure immediately.</div>
+        </div>
+        <span class="ci-risk risk-low">AVAILABLE</span>
+      </div>
+      <div class="check-item">
+        <span class="ci-icon">❌</span>
+        <div class="ci-content">
+          <div class="ci-title">LinkedIn @nexustri — TAKEN</div>
+          <div class="ci-note">Company page registered. Address before launch.</div>
+        </div>
+        <span class="ci-risk risk-high">TAKEN</span>
+      </div>
+    </div>
+    <div class="alt-box">
+      <div class="alt-label">Recommended Alternatives</div>
+      <div class="alt-items">
+        <span class="alt-tag">@nexustrihq</span>
+        <span class="alt-tag">@getnexustri</span>
+        <span class="alt-tag">@nexustri_io</span>
+        <span class="alt-tag">@nexustriapp</span>
+      </div>
+    </div>
+    <div class="risk-summary">
+      <span class="rs-label">Overall Social Risk</span>
+      <span class="rs-val" style="color:#f59e0b;">MEDIUM — Address LinkedIn before launch</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">4. Trademark Risk Assessment</div>
+    <div class="summary-box">
+      <div class="rec-label">Databases Checked</div>
+      <div class="rec-text">USPTO (United States) · EUIPO (European Union) · WIPO (International). Classes analyzed: 9 (Software), 35 (Business Services), 42 (Technology Services).</div>
+    </div>
+    <div class="check-list">
+      <div class="check-item">
+        <span class="ci-icon">✅</span>
+        <div class="ci-content">
+          <div class="ci-title">USPTO — No conflicts found (Class 9/35/42)</div>
+          <div class="ci-note">No registered or pending marks matching "Nexustri" in relevant classes.</div>
+        </div>
+        <span class="ci-risk risk-low">CLEAR</span>
+      </div>
+      <div class="check-item">
+        <span class="ci-icon">⚠️</span>
+        <div class="ci-content">
+          <div class="ci-title">EUIPO — "Nexus Tree" registered (Class 35)</div>
+          <div class="ci-note">Phonetic similarity low. Different spelling, different visual identity. Low confusion risk but monitor.</div>
+        </div>
+        <span class="ci-risk risk-med">MONITOR</span>
+      </div>
+      <div class="check-item">
+        <span class="ci-icon">✅</span>
+        <div class="ci-content">
+          <div class="ci-title">WIPO — No international conflicts flagged</div>
+          <div class="ci-note">No Madrid Protocol registrations matching "Nexustri".</div>
+        </div>
+        <span class="ci-risk risk-low">CLEAR</span>
+      </div>
+    </div>
+    <div class="risk-summary">
+      <span class="rs-label">Overall Trademark Risk</span>
+      <span class="rs-val" style="color:#16a34a;">LOW — Consult IP attorney before filing</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 3 — RECOMMENDATIONS -->
+<div class="final-page">
+  <div class="page-header">
+    <div class="ph-brand">
+      <div class="ph-logo"><img src="https://nameproof.io/nameproof-logo-new.png" alt="NP"/></div>
+      <span class="ph-name">NameProof</span>
+    </div>
+    <div class="ph-meta">Nexustri · NP-2025-001 · Dec 11, 2025</div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">5. Top 5 Recommended Names</div>
+    <div class="top5-grid">
+      <div class="top5-item">
+        <div class="top5-num">1</div>
+        <div>
+          <div class="top5-name">Nexustri</div>
+          <div class="top5-note">Primary recommendation · Strong global pronunciation · Distinctive</div>
+        </div>
+        <span class="top5-score">76/100</span>
+      </div>
+      <div class="top5-item">
+        <div class="top5-num">2</div>
+        <div>
+          <div class="top5-name">Vexora</div>
+          <div class="top5-note">Clean, modern · .com available · No trademark conflicts</div>
+        </div>
+        <span class="top5-score">88/100</span>
+      </div>
+      <div class="top5-item">
+        <div class="top5-num">3</div>
+        <div>
+          <div class="top5-name">Trellix</div>
+          <div class="top5-note">Tech-forward · Easy to pronounce globally · Strong recall</div>
+        </div>
+        <span class="top5-score">84/100</span>
+      </div>
+      <div class="top5-item">
+        <div class="top5-num">4</div>
+        <div>
+          <div class="top5-name">Kloven</div>
+          <div class="top5-note">Minimal, premium feel · Low trademark risk · .io available</div>
+        </div>
+        <span class="top5-score">81/100</span>
+      </div>
+      <div class="top5-item">
+        <div class="top5-num">5</div>
+        <div>
+          <div class="top5-name">Stravio</div>
+          <div class="top5-note">Distinctive · European-friendly · All handles available</div>
+        </div>
+        <span class="top5-score">79/100</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" style="margin-top:24px;">
+    <div class="section-title">6. Immediate Action Plan</div>
+    <div class="check-list">
+      <div class="check-item">
+        <span class="ci-icon">1️⃣</span>
+        <div class="ci-content">
+          <div class="ci-title">Secure nexustri.com and nexustri.io today</div>
+          <div class="ci-note">Both available — register before someone else does.</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <span class="ci-icon">2️⃣</span>
+        <div class="ci-content">
+          <div class="ci-title">Register @Nexustri_com on X and @nexustri on Instagram</div>
+          <div class="ci-note">Instagram handle available — claim immediately.</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <span class="ci-icon">3️⃣</span>
+        <div class="ci-content">
+          <div class="ci-title">Address LinkedIn handle before public launch</div>
+          <div class="ci-note">Contact LinkedIn or use @nexustrihq as alternative.</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <span class="ci-icon">4️⃣</span>
+        <div class="ci-content">
+          <div class="ci-title">Consult an IP attorney for trademark filing</div>
+          <div class="ci-note">Monitor EUIPO "Nexus Tree" registration. Low risk but worth professional review.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="disclaimer-box">
+    <p>This report is provided by NameProof for informational purposes only and does not constitute legal advice or a formal trademark clearance opinion. Trademark availability signals are based on AI-assisted database analysis and may not reflect the most current registration status. NameProof recommends consulting a qualified intellectual property attorney before filing any trademark or making significant brand investment decisions. Report valid for 30 days from generation date. Questions: hello@nameproof.io</p>
+  </div>
+</div>
+
+</body>
+</html>
