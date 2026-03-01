@@ -425,7 +425,8 @@
   </div>
 
   <script>
-    const webhookUrl = "https://hook.eu1.make.com/gaa9lgj9ms6mz7q64rt69o3156kdm8wh";
+    // ✅ UPDATED: calls Netlify Function proxy instead of Make.com directly
+    const webhookUrl = "/.netlify/functions/submit-lead";
 
     const form = document.getElementById('betaForm');
     const successMessage = document.getElementById('successMessage');
