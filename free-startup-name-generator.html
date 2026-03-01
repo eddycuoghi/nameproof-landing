@@ -276,6 +276,12 @@
               <input type="text" id="notes" name="notes" placeholder="Anything we should know? (optional)" />
             </div>
 
+            <!-- Honeypot (bots fill it) -->
+            <div style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;" aria-hidden="true">
+              <label for="np_website">Website</label>
+              <input id="np_website" type="text" name="website" tabindex="-1" autocomplete="off">
+            </div>
+
             <button type="submit" class="submit-btn" id="submitBtn">Get my 3 free names</button>
 
             <div class="form-success" id="successMessage" style="text-align:left;">
@@ -473,6 +479,19 @@
         if (!payload.email) throw new Error('Please enter your email.');
         if (payload.hasName === 'yes' && !payload.brandName) throw new Error('Please enter your brand name.');
         if (payload.hasName !== 'yes' && !payload.businessIdea) throw new Error('Please describe what you are building.');
+
+        // Honeypot check
+        const hp = form.querySelector('input[name="website"]')?.value?.trim();
+        if (hp) return;
+
+        // Client-side cooldown
+        const rlKey = 'np_free_submit_ts';
+        const lastTs = parseInt(localStorage.getItem(rlKey) || '0', 10);
+        if (Date.now() - lastTs < 60000) {
+          alert('Please wait 60 seconds before submitting again.');
+          return;
+        }
+        localStorage.setItem(rlKey, Date.now().toString());
 
         const res = await fetch(webhookUrl, {
           method: 'POST',
