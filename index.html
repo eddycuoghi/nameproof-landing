@@ -409,7 +409,8 @@
     }
     function renderAssessment(data,name){
       const payload=data||{};
-      const finalData=(payload&&payload.signals)?payload:fallbackAssessment(name);
+      const assessmentPayload=(payload.assessment&&payload.assessment.signals)?payload.assessment:payload;
+      const finalData=(assessmentPayload&&assessmentPayload.signals)?assessmentPayload:fallbackAssessment(name);
       const assessment=finalData.assessment||{};
       resultName.textContent=name;
       resultSummary.textContent=finalData.executive_summary||finalData.summary||fallbackAssessment(name).summary;
