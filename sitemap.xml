@@ -5,6 +5,10 @@
     <priority>1.00</priority>
   </url>
   <url>
+    <loc>https://nameproof.io/sample-report</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
     <loc>https://nameproof.io/free-startup-name-generator</loc>
     <priority>0.80</priority>
   </url>
@@ -15,5 +19,33 @@
   <url>
     <loc>https://nameproof.io/domain-availability-checker</loc>
     <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://nameproof.io/blog/</loc>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://nameproof.io/blog/can-two-companies-have-the-same-name.html</loc>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://nameproof.io/blog/how-to-validate-brand-name.html</loc>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://nameproof.io/blog/startup-name-checklist.html</loc>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://nameproof.io/blog/trademark-search-startup.html</loc>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://nameproof.io/blog/startup-name-ideas.html</loc>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://nameproof.io/blog/how-to-check-company-name-uk.html</loc>
+    <priority>0.60</priority>
   </url>
 </urlset>
